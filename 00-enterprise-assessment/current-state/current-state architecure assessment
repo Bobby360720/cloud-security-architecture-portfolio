@@ -1,0 +1,17 @@
+# Current-State Azure Architecture Assessment
+
+## Management Groups
+
+Current State:
+Azure subscriptions have grown organically and require
+reorganization around enterprise workload boundaries.
+
+Observed Risks:
+- Inconsistent policy inheritance
+- Subscription-level policy duplication
+- Unclear platform/workload boundaries
+- Difficult enterprise-wide control enforcement
+
+Target Capability:
+Enterprise management-group hierarchy supporting platform,
+production, non-production, sandbox, and transitional workloads.

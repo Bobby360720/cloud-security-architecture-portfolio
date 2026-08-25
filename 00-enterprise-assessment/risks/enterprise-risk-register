@@ -1,0 +1,12 @@
+## Enterprise Risk Register
+
+| ID    | Risk                             | Likelihood | Impact   | Rating   | Treatment             | Phase |
+| ----- | -------------------------------- | ---------- | -------- | -------- | --------------------- | ----- |
+| R-001 | Inconsistent policy inheritance  | High       | High     | Critical | Redesign MG hierarchy | 1–2   |
+| R-002 | Standing privileged access       | High       | Critical | Critical | PIM/RBAC redesign     | 3     |
+| R-003 | Publicly exposed services        | Medium     | High     | High     | Private connectivity  | 4     |
+| R-004 | Incomplete telemetry             | Medium     | High     | High     | Central logging       | 5     |
+| R-005 | Manual cloud deployments         | High       | Medium   | High     | IaC/CI-CD             | 6     |
+| R-006 | Inconsistent data classification | Medium     | High     | High     | Purview/DLP           | 7     |
+| R-007 | Long-lived workload credentials  | High       | High     | Critical | Managed identities    | 3/6   |
+| R-008 | No AI security baseline          | Medium     | High     | High     | AI governance         | 8     |
