@@ -22,7 +22,7 @@ This inventory is intentionally architecture-focused rather than exhaustive. It 
 
 ## Executive Summary
 
-AFG Enterprises operates a hybrid Azure environment with workloads distributed across production, non-production, security, shared services, networking, and sandbox subscriptions.
+AFG Enterprises operates a hybrid Azure environment with workloads distributed across eight management groups — **Production, Non-Production, Connectivity, Management, Security, Platform, Sandbox, and Legacy** — spanning Production, Non-Production, Platform, Sandbox, Legacy, and Production-support environments.
 
 The environment has grown organically and includes a mix of newer cloud-native services and legacy workloads.
 
@@ -31,7 +31,7 @@ The environment has grown organically and includes a mix of newer cloud-native s
 | Area | Current State |
 |---|---|
 | Azure tenants | 1 |
-| Management groups | 6 |
+| Management groups | 8 |
 | Azure subscriptions | 12 |
 | Azure regions in use | 4 |
 | Azure VMs | 38 |
@@ -53,7 +53,7 @@ The environment has grown organically and includes a mix of newer cloud-native s
 
 ### Primary Inventory Concerns
 
-- subscription ownership is inconsistently documented;
+- subscription ownership is inconsistently documented, and no subscription currently tracks a secondary/backup owner;
 - management-group placement does not fully reflect business criticality;
 - tagging coverage is incomplete;
 - public exposure exists across several workloads;
@@ -79,32 +79,50 @@ The environment has grown organically and includes a mix of newer cloud-native s
 | Primary SIEM | Microsoft Sentinel |
 | Primary CSPM/CWPP | Microsoft Defender for Cloud |
 
-## Current Management Group Hierarchy
+## AFG Current-State Management Group Hierarchy
 
 ```text
-Tenant Root
-│
+Tenant Root Group
+├── Production
+│   ├── sub-prod-apps-01        — Production
+│   ├── sub-prod-apps-02        — Production
+│   ├── sub-prod-data-01        — Production
+│   └── sub-dr-01                — Production support
+├── Non-Production
+│   ├── sub-nonprod-apps-01     — Non-Production
+│   └── sub-nonprod-data-01     — Non-Production
+├── Connectivity
+│   └── sub-connectivity-01     — Platform
+├── Management
+│   └── sub-management-01       — Platform
+├── Security
+│   └── sub-security-01         — Platform
 ├── Platform
-│   ├── Connectivity
-│   ├── Management
-│   └── Security
-│
-├── Landing-Zones
-│   ├── Production
-│   └── Non-Production
-│
+│   └── sub-shared-services-01  — Platform
 ├── Sandbox
-│
+│   └── sub-sandbox-01          — Sandbox
 └── Legacy
+    └── sub-legacy-01           — Legacy
 ```
+
+*Note: the eight management groups are represented as flat siblings under the Tenant Root Group, reflecting what the current-state data actually shows. A common Azure Landing Zone target-state pattern nests Management, Connectivity, and Security under a shared "Platform" parent — that would be a Phase 1 design decision, not a description of the current state, and isn't asserted here.*
 
 ### Current-State Observations
 
-- The hierarchy exists but is not consistently used as the primary governance boundary.
-- Several older subscriptions remain under transitional or legacy placement.
-- Policy assignment exists at multiple scopes, increasing the risk of duplication.
-- Production and non-production separation is improving but not yet fully normalized.
-- Subscription onboarding is not yet completely automated.
+| Management Group | Subscription | Environment | Governance Status | Notable Finding |
+|---|---|---|---|---|
+| Production | sub-prod-apps-01 | Production | Partial | Public network access and authentication patterns vary by application; diagnostic settings differ across services. |
+| Production | sub-prod-apps-02 | Production | Partial | Same application-tier governance gaps as sub-prod-apps-01; private endpoint adoption incomplete. |
+| Production | sub-prod-data-01 | Production | Developing | Data classification incomplete; key ownership not consistently documented. |
+| Production | sub-dr-01 | Production support | Partial | Recovery testing is inconsistent; documented RTO/RPO exists only for some Tier 1 workloads. |
+| Non-Production | sub-nonprod-apps-01 | Non-Production | Partial | Development/test workloads; several Function Apps still rely on client secrets rather than managed identity. |
+| Non-Production | sub-nonprod-data-01 | Non-Production | Developing | Non-production data handling requires stronger governance per the Database Inventory findings. |
+| Connectivity | sub-connectivity-01 | Platform | Strong | Hub networking; strongest governance tier in the estate, though approved-region policy enforcement is not universal tenant-wide. |
+| Management | sub-management-01 | Platform | Strong | Monitoring/automation; strong locally, but Log Analytics workspace count (8) and Sentinel coverage (2) remain uneven across the tenant. |
+| Security | sub-security-01 | Platform | Strong | Security tooling; strong locally, though Defender for Cloud plan coverage is only partially standardized tenant-wide. |
+| Platform | sub-shared-services-01 | Platform | Partial | Shared infrastructure; a contributor to the overlapping-scope policy assignments noted in Section 11. |
+| Sandbox | sub-sandbox-01 | Sandbox | Limited | Controls are intentionally lighter by design but require clearer boundaries (see Key Findings, Section 2). |
+| Legacy | sub-legacy-01 | Legacy | Weak | Materially weaker governance than the modern platform subscriptions; manual configuration dependency; network patterns misaligned with current standards. |
 
 ---
 
@@ -127,7 +145,7 @@ Tenant Root
 
 ### Key Findings
 
-- Two subscriptions do not have clearly defined secondary owners.
+- No subscription currently tracks a secondary/backup owner — only a single Primary Owner is documented per subscription, which is itself a continuity-of-ownership gap for Tier 1 workloads.
 - Legacy subscription governance is materially weaker than the modern platform subscriptions.
 - Business criticality is not consistently reflected in metadata.
 - Several policy assignments are duplicated at subscription scope.
