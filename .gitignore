@@ -36,3 +36,6 @@ Thumbs.db
 
 # Keep Terraform dependency lock files
 !**/.terraform.lock.hcl
+
+# Terraform backend configuration
+**/backend.tf
