@@ -1,4 +1,4 @@
-﻿````markdown
+
 # Cloud Security Architecture Portfolio
 
 > **Status: Active Working Lab / In Development**
