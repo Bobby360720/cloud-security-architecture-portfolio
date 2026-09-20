@@ -71,3 +71,22 @@ steps:
       az account show \
         --query "{subscription:name, subscriptionId:id, tenantId:tenantId}" \
         --output table
+
+- task: AzureCLI@2
+  displayName: 'Terraform Plan'
+  inputs:
+    azureSubscription: 'sc-azure-sub-management-01-wif'
+    addSpnToEnvironment: true
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    workingDirectory: '$(terraformWorkingDirectory)'
+    inlineScript: |
+      set -e
+
+      export ARM_CLIENT_ID="$servicePrincipalId"
+      export ARM_TENANT_ID="$tenantId"
+      export ARM_SUBSCRIPTION_ID="$(az account show --query id -o tsv)"
+      export ARM_USE_OIDC=true
+      export ARM_OIDC_TOKEN="$idToken"
+
+      terraform plan -out=tfplan
