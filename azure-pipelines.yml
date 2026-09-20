@@ -1,12 +1,14 @@
 # Azure DevOps CI Pipeline
 # Cloud Security Architecture Portfolio
 #
-# Phase 1:
+# Bootstrap CI:
 #   - Checkout repository
 #   - Install Terraform
 #   - Check formatting
-#   - Initialize Terraform without backend
+#   - Authenticate to Azure using Workload Identity Federation
+#   - Initialize Terraform using Azure remote state
 #   - Validate Terraform
+#   - Generate Terraform plan
 #
 # No Azure deployment occurs in this pipeline.
 
@@ -50,16 +52,6 @@ steps:
   workingDirectory: $(terraformWorkingDirectory)
   displayName: 'Terraform Format Check'
 
-- bash: |
-    terraform init -backend=false
-  workingDirectory: $(terraformWorkingDirectory)
-  displayName: 'Terraform Init'
-
-- bash: |
-    terraform validate
-  workingDirectory: $(terraformWorkingDirectory)
-  displayName: 'Terraform Validate'
-
 - task: AzureCLI@2
   displayName: 'Verify Azure Authentication'
   inputs:
@@ -67,10 +59,36 @@ steps:
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
+      set -e
+
       echo "Authenticated Azure context:"
+
       az account show \
         --query "{subscription:name, subscriptionId:id, tenantId:tenantId}" \
         --output table
+
+- task: AzureCLI@2
+  displayName: 'Terraform Init and Validate'
+  inputs:
+    azureSubscription: 'sc-azure-sub-management-01-wif'
+    addSpnToEnvironment: true
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    workingDirectory: '$(terraformWorkingDirectory)'
+    inlineScript: |
+      set -e
+
+      export ARM_CLIENT_ID="$servicePrincipalId"
+      export ARM_TENANT_ID="$tenantId"
+      export ARM_SUBSCRIPTION_ID="$(az account show --query id -o tsv)"
+      export ARM_USE_OIDC=true
+      export ARM_OIDC_TOKEN="$idToken"
+
+      echo "Initializing Terraform remote backend..."
+      terraform init
+
+      echo "Validating Terraform configuration..."
+      terraform validate
 
 - task: AzureCLI@2
   displayName: 'Terraform Plan'
@@ -89,4 +107,5 @@ steps:
       export ARM_USE_OIDC=true
       export ARM_OIDC_TOKEN="$idToken"
 
+      echo "Generating Terraform plan..."
       terraform plan -out=tfplan
