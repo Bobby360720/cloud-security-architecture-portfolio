@@ -1,0 +1,61 @@
+# Azure DevOps CI Pipeline
+# Cloud Security Architecture Portfolio
+#
+# Phase 1:
+#   - Checkout repository
+#   - Install Terraform
+#   - Check formatting
+#   - Initialize Terraform without backend
+#   - Validate Terraform
+#
+# No Azure deployment occurs in this pipeline.
+
+trigger:
+  branches:
+    include:
+      - main
+
+pr:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  terraformVersion: '1.16.3'
+  terraformWorkingDirectory: '00-bootstrap/terraform'
+
+steps:
+
+- checkout: self
+  displayName: 'Checkout Repository'
+
+- bash: |
+    set -e
+
+    wget -q \
+      https://releases.hashicorp.com/terraform/$(terraformVersion)/terraform_$(terraformVersion)_linux_amd64.zip
+
+    unzip -q terraform_$(terraformVersion)_linux_amd64.zip
+
+    sudo mv terraform /usr/local/bin/
+
+    terraform version
+  displayName: 'Install Terraform'
+
+- bash: |
+    terraform fmt -check -recursive
+  workingDirectory: $(terraformWorkingDirectory)
+  displayName: 'Terraform Format Check'
+
+- bash: |
+    terraform init -backend=false
+  workingDirectory: $(terraformWorkingDirectory)
+  displayName: 'Terraform Init'
+
+- bash: |
+    terraform validate
+  workingDirectory: $(terraformWorkingDirectory)
+  displayName: 'Terraform Validate'
