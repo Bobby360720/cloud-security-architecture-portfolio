@@ -59,3 +59,15 @@ steps:
     terraform validate
   workingDirectory: $(terraformWorkingDirectory)
   displayName: 'Terraform Validate'
+
+- task: AzureCLI@2
+  displayName: 'Verify Azure Authentication'
+  inputs:
+    azureSubscription: 'sc-azure-sub-management-01-wif'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      echo "Authenticated Azure context:"
+      az account show \
+        --query "{subscription:name, subscriptionId:id, tenantId:tenantId}" \
+        --output table
