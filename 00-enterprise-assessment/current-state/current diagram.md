@@ -1,26 +1,3 @@
-                    AFG ENTERPRISE
-                         │
-              ┌──────────┴──────────┐
-              │                     │
-         On-Premises              Azure
-              │                     │
-        Legacy Systems        ┌─────┴─────┐
-              │               │           │
-         ExpressRoute      Prod Subs   NonProd Subs
-                              │           │
-                          Resources    Resources
-                              │           │
-                              └─────┬─────┘
-                                    │
-                              Shared Services
+## Current-State Architecture Diagram
 
-CURRENT-STATE CONCERNS
-
-⚠ Inconsistent governance
-⚠ Mixed policy assignments
-⚠ Public endpoints
-⚠ Privileged access
-⚠ Inconsistent logging
-⚠ Manual configuration
-⚠ Weak ownership metadata
-⚠ Credential lifecycle
+![AFG Enterprises Current-State Architecture](../diagrams/current-state-architecture.png)
