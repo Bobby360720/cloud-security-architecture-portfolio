@@ -1,8 +1,3 @@
-Yes. Here is the **completed corrected version** I recommend for `00-enterprise-assessment/current-state/cloud-inventory.md`.
-
-I preserved the depth of your existing inventory, but corrected the architecture model, separated the **12-subscription logical enterprise** from the **physical Azure lab**, added evidence classification, and incorporated the brownfield Terraform work we actually performed. Your original already had strong coverage across compute, PaaS, data, networking, SecOps, governance, identity, resilience, DevSecOps, and AI, so those areas should remain rather than being reduced. 
-
-````markdown
 # Cloud Inventory
 
 > **Portfolio note:** This inventory is fictionalized and sanitized for the
