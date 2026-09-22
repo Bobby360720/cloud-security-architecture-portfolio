@@ -1,10 +1,3 @@
-This is a **good skeleton**, but compared with the cloud inventory we just completed, it is too compressed for the main Phase 0 architecture assessment. I would keep your six-plane concept—it's strong—but expand it into a document that shows **relationships, boundaries, dependencies, architectural debt, and design implications**.
-
-Most importantly, I would **not change your architecture story**. I would deepen it.
-
-Here is the completed version I recommend for `current-state-architecture.md`:
-
-````markdown
 # Current-State Architecture Assessment
 
 > **Portfolio note:** This architecture assessment is fictionalized and
