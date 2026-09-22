@@ -1,434 +1,216 @@
+# Enterprise Cloud Security Architecture Transformation
 
-# Cloud Security Architecture Portfolio
+**From brownfield assessment to validated enterprise cloud security architecture.**
 
-> **Status: Active Working Lab / In Development**
+An evolving, hands-on architecture portfolio demonstrating how to assess, design, engineer, secure and modernize a hybrid enterprise Azure environment.
 
-This repository is a hands-on **Cloud Security Architecture portfolio and working lab** that demonstrates the assessment, design, engineering, governance, security, and modernization of an enterprise Azure environment.
+**Microsoft Azure · Cloud Security Architecture · Zero Trust · Terraform · Cloud Governance · DevSecOps**
 
-This is **not a completed reference architecture** and is not intended to represent a production-ready environment in its current state. The repository is being developed incrementally as I work through an end-to-end enterprise architecture transformation.
+**Current status:** Phase 0 — Enterprise Assessment (in progress)
 
-The objective is to demonstrate not only the final architecture, but also the **engineering and architectural process used to get there**.
+[View current assessment](00-enterprise-assessment/README.md) · [Explore engineering foundation](00-bootstrap/README.md) · [Track progress](../../issues) · [Connect on LinkedIn](https://www.linkedin.com/in/johnhilton1/)
 
 ---
 
-## What I Am Building
+## 1. The Architecture Challenge
 
-The lab models an enterprise Azure environment and follows its transformation through multiple architecture phases.
+AFG Enterprises is a fictionalized enterprise with a hybrid Azure environment that has evolved through incremental cloud adoption.
 
-Rather than beginning with an idealized greenfield environment, the project starts by establishing a **current-state enterprise architecture** containing realistic architectural, governance, identity, networking, operational, and security challenges.
+The organization has invested in identity, networking, governance, monitoring and security tooling. However, inconsistent adoption across production, non-production and legacy environments has created architectural debt.
 
-Each subsequent phase evaluates that environment and introduces architectural changes designed to move it toward a more mature target state.
+The transformation addresses eight interconnected challenges:
 
-The portfolio therefore captures both:
+* Fragmented governance and overlapping policy assignments.
+* Inconsistent privileged and workload identity management.
+* Uneven network segmentation and public exposure.
+* Gaps in centralized logging and security telemetry.
+* Incomplete ownership and criticality metadata.
+* Manual infrastructure configuration and deployment.
+* Inconsistent data protection and resilience requirements.
+* Emerging AI workloads without standardized security governance.
 
-- **Architecture decisions**
-- **Hands-on implementation**
-- **Current-state assessments**
-- **Target-state designs**
-- **Architecture Decision Records (ADRs)**
-- **Infrastructure as Code**
-- **Security and governance controls**
-- **CI/CD workflows**
-- **Validation and testing**
-- **Evidence of implementation**
-- **Lessons learned and design tradeoffs**
+**The central question:** How do we transform an existing enterprise into a consistently governed, secure and repeatable cloud environment without disrupting business operations?
 
-The goal is to demonstrate the complete lifecycle:
+## 2. Architecture at a Glance
+
+AFG operates a hybrid enterprise architecture connecting on-premises infrastructure to Azure through private connectivity.
+
+The logical architecture separates shared platform services from workload landing zones.
+
+Platform services provide connectivity, management and security capabilities. Landing zones organize production, non-production, sandbox and legacy workloads.
+
+Microsoft Entra ID, Azure Policy, monitoring, security operations and automation operate across these boundaries.
+
+### Current-State Architecture
+
+The detailed diagram is maintained in the [Phase 0 architecture documentation](00-enterprise-assessment/current-state/current-state-architecture.md).
+
+The architecture is deliberately assessed as an existing brownfield environment rather than presented as an ideal greenfield deployment.
+
+## 3. Current Transformation Status
+
+| Phase     | Architecture domain    | Status      |
+| --------- | ---------------------- | ----------- |
+| Bootstrap | Engineering foundation | Complete    |
+| 00        | Enterprise Assessment  | In progress |
+| 01        | Azure Landing Zone     | Planned     |
+| 02        | Cloud Governance       | Planned     |
+| 03        | Zero Trust Identity    | Planned     |
+| 04        | Network Modernization  | Planned     |
+| 05        | Security Operations    | Planned     |
+| 06        | DevSecOps              | Planned     |
+| 07        | Data Protection        | Planned     |
+| 08        | AI Security            | Planned     |
+| 09        | DLV FinTech Platform   | Planned     |
+
+**Current focus:** Complete the Phase 0 assessment, document architectural risks and requirements, and establish the baseline for Phase 1.
+
+Progress is tracked through [GitHub Issues](../../issues) and [Milestones](../../milestones). Engineering changes are recorded in the repository's commit history.
+
+## 4. What Has Been Engineered
+
+This portfolio contains both architecture documentation and hands-on implementation.
+
+### Engineering foundation
+
+The initial engineering foundation includes:
+
+* Terraform-based Azure infrastructure deployment.
+* Azure Storage remote Terraform state.
+* GitHub version control.
+* Azure DevOps integration.
+* Workload identity federation for Azure authentication.
+* Terraform formatting, validation and planning.
+
+### Brownfield architecture reconstruction
+
+Phase 0 has established a Terraform-managed organizational hierarchy with nine management groups beneath Tenant Root.
+
+The reconstruction includes discovery of existing Azure resources, import into Terraform state, inspection of potentially destructive changes, preservation of existing management-group identifiers and non-destructive hierarchy reconciliation.
+
+Three core platform subscriptions are represented through Terraform subscription associations:
+
+* `sub-connectivity-01`
+* `sub-management-01`
+* `sub-security-01`
+
+This work demonstrates how Infrastructure as Code can adopt and manage existing enterprise infrastructure rather than requiring a complete rebuild.
+
+[Explore Phase 0 Terraform](00-enterprise-assessment/terraform/)
+
+## 5. Current Phase — Enterprise Assessment
+
+**Objective:** Establish a defensible current-state architecture before designing the target state.
+
+| Deliverable                               | Status         |
+| ----------------------------------------- | -------------- |
+| Terraform engineering foundation          | Complete       |
+| Management-group reconstruction           | Complete       |
+| Cloud inventory                           | Documented     |
+| Current-state architecture assessment     | Drafted        |
+| Current-state architecture diagram        | In progress    |
+| Identity assessment                       | Pending review |
+| Network assessment                        | Pending review |
+| Security operations assessment            | Pending review |
+| Security governance maturity              | Pending review |
+| Enterprise risk register                  | Pending review |
+| Architecture requirements                 | Pending review |
+| Traceability and transformation decisions | Pending review |
+| Phase 0 checkpoint                        | Pending        |
+
+### Featured architecture documents
+
+* [Cloud Inventory](00-enterprise-assessment/current-state/cloud-inventory.md) — logical enterprise resources, physical lab boundaries, ownership and governance findings.
+* [Current-State Architecture](00-enterprise-assessment/current-state/current-state-architecture.md) — architectural planes, dependencies, weaknesses and constraints.
+* [Transformation Strategy ADR](00-enterprise-assessment/decisions/ADR-001-transformation-strategy.md) — phased transformation decisions.
+
+The completion status of each deliverable is maintained through GitHub Issues.
+
+## 6. Transformation Methodology
+
+Every phase follows the same architecture lifecycle:
 
 **Discover → Assess → Design → Decide → Engineer → Validate → Operate → Improve**
 
----
+Findings and decisions are connected through a traceability chain:
 
-## Why I Am Building It
+**Observation → Finding → Risk → Requirement → Architecture Decision → Control → Validation → Evidence**
 
-The purpose of this portfolio is to develop and demonstrate the skills required to operate as a **Cloud Security Architect** in a complex enterprise environment.
+This prevents the portfolio from becoming a disconnected collection of technology demonstrations.
 
-Cloud architecture is more than deploying technically correct Azure resources. Architects must be able to understand an existing environment, identify risk and technical debt, establish requirements, make defensible design decisions, define governance, communicate tradeoffs, and create an achievable path from the current state to the target state.
+Each transformation phase is intended to produce a documented architecture checkpoint, including design decisions, implementation changes, validation results and lessons learned.
 
-This project is therefore intentionally structured as an **architecture transformation**, rather than a collection of disconnected Azure labs.
+## 7. Enterprise Model vs. Physical Lab
 
-The focus is on developing and demonstrating capabilities across:
+The portfolio intentionally distinguishes the full fictionalized enterprise from the resources deployed in the physical Azure lab.
 
-- Enterprise architecture
-- Cloud security architecture
-- Azure Landing Zones
-- Cloud governance
-- Zero Trust
-- Identity architecture
-- Network architecture
-- Security operations
-- Infrastructure as Code
-- DevSecOps
-- Data protection
-- AI security
-- Architecture documentation and decision-making
+| Logical enterprise                                 | Physical lab                                   |
+| -------------------------------------------------- | ---------------------------------------------- |
+| Twelve-subscription enterprise model               | Selected platform subscriptions                |
+| Representative enterprise-scale resource inventory | Cost-controlled implementation                 |
+| Modeled security and governance gaps               | Selectively implemented and validated controls |
+| Complete transformation architecture               | Incremental engineering checkpoints            |
 
----
+**Evidence classifications**
 
-## Lab Philosophy
+* **Modeled:** Part of the representative AFG enterprise scenario.
+* **Observed:** Discovered directly from the physical lab.
+* **Validated:** Implemented and tested.
+* **Planned:** Identified for a future phase.
 
-A key principle of this project is:
+The enterprise scenario is fictionalized and sanitized. It does not represent a production customer environment.
 
-> **Understand and reproduce the current state before attempting to improve it.**
+## 8. Technology and Architecture Domains
 
-The initial environment intentionally contains architectural weaknesses, inconsistent controls, operational gaps, and technical debt.
+| Domain                 | Technologies and practices                                    |
+| ---------------------- | ------------------------------------------------------------- |
+| Cloud platform         | Microsoft Azure, management groups, subscriptions             |
+| Identity               | Microsoft Entra ID, RBAC, PIM, workload identity              |
+| Governance             | Azure Policy, tagging, compliance, architecture standards     |
+| Infrastructure as Code | Terraform, Bicep                                              |
+| Engineering            | GitHub, Azure DevOps, CI/CD                                   |
+| Network security       | Hub-and-spoke, Azure Firewall, private endpoints              |
+| Security operations    | Microsoft Sentinel, Defender for Cloud, Azure Monitor         |
+| Data protection        | Key Vault, classification, encryption, Microsoft Purview      |
+| Emerging technology    | AI security, threat modeling, secure application architecture |
 
-Those conditions are not necessarily implementation mistakes in the lab. Many are intentionally modeled so they can be discovered during assessment and addressed through later architecture phases.
+Technologies are introduced and validated according to the needs of each transformation phase.
 
-This creates a more realistic architecture exercise:
+## 9. Repository Navigation
 
-```text
-Current State
-     ↓
-Discovery
-     ↓
-Assessment
-     ↓
-Requirements
-     ↓
-Gap Analysis
-     ↓
-Architecture Decisions
-     ↓
-Target State
-     ↓
-Engineering
-     ↓
-Validation
-     ↓
-Operationalization
-     ↓
-Continuous Improvement
-````
+| Directory                                             | Purpose                                            |
+| ----------------------------------------------------- | -------------------------------------------------- |
+| [00-bootstrap](00-bootstrap/)                         | Engineering foundation and Terraform bootstrap     |
+| [00-enterprise-assessment](00-enterprise-assessment/) | Current-state assessment and architecture baseline |
+| [01-azure-landing-zone](01-azure-landing-zone/)       | Landing-zone transformation                        |
+| [02-cloud-governance](02-cloud-governance/)           | Policy, governance and compliance                  |
+| [03-zero-trust-identity](03-zero-trust-identity/)     | Workforce, privileged and workload identity        |
+| [04-network-modernization](04-network-modernization/) | Network architecture and segmentation              |
+| [05-security-operations](05-security-operations/)     | Monitoring, detection and response                 |
+| [06-devsecops](06-devsecops/)                         | Secure engineering and deployment                  |
+| [07-data-protection](07-data-protection/)             | Data security architecture                         |
+| [08-ai-security](08-ai-security/)                     | AI security architecture                           |
+| [09-dlv-fintech-platform](09-dlv-fintech-platform/)   | Reference application platform                     |
 
-The lab may use scaled-down resource quantities where appropriate while preserving the architectural relationships and problems being studied.
+## 10. Follow the Progress
 
----
+The portfolio is developed incrementally. GitHub provides visibility into the architecture transformation:
 
-## Current Project Status
+* [Issues](../../issues) track assessment and engineering deliverables.
+* [Milestones](../../milestones) group work by transformation phase.
+* [Commit history](../../commits/main/) records changes to documentation and code.
+* Releases and tags will identify completed architecture checkpoints.
 
-🚧 **This repository is actively under development.**
-
-The architecture, documentation, Terraform modules, diagrams, pipelines, controls, and implementation evidence will continue to evolve as each phase is completed.
-
-Some directories may therefore contain:
-
-* incomplete implementations
-* design drafts
-* placeholders
-* planned architecture
-* partially deployed infrastructure
-* assessment artifacts
-* experiments
-* implementation evidence
-* lessons learned
-
-This is intentional.
-
-The repository is designed to show the **evolution of the architecture**, not simply the polished final result.
+Completed work is distinguished from in-progress and planned capabilities. Architecture decisions and engineering evidence are published as the project develops.
 
 ---
 
-## Engineering Approach
+## About the Architect
 
-Infrastructure is increasingly implemented through **Terraform and Infrastructure as Code**, with GitHub serving as the source repository and Azure DevOps providing CI/CD workflow capabilities.
+**John Hilton Jr.**
 
-The Terraform engineering workflow follows:
+Cloud Security Engineer focused on enterprise cloud security architecture, Azure governance, Zero Trust, Infrastructure as Code and secure platform engineering.
 
-**Write → Format → Initialize → Validate → Plan → Inspect → Apply → Verify → Document**
+This portfolio demonstrates the progression from implementing individual security controls to designing, governing and validating enterprise-wide security architecture.
 
-The emphasis is on maintaining a human architecture and security review between automated planning and infrastructure deployment.
-
-The evolving delivery model is:
-
-```text
-Architecture / Requirements
-          ↓
-      Terraform
-          ↓
-       GitHub
-          ↓
-   Azure DevOps CI/CD
-          ↓
- Format / Validate / Plan
-          ↓
-     Human Review
-          ↓
-        Apply
-          ↓
-   Azure Environment
-          ↓
-       Verify
-          ↓
- Evidence / Documentation
-```
-
-Automation is introduced progressively as the lab matures.
-
----
-
-# Architecture Transformation Roadmap
-
-## Phase 0 — Enterprise Assessment
-
-**Directory:** `00-enterprise-assessment`
-
-Establish the enterprise current state before modernization begins.
-
-Focus areas include:
-
-* Current-state discovery
-* Cloud inventory
-* Architecture assessment
-* Identity assessment
-* Network assessment
-* Security operations assessment
-* Governance maturity
-* Risk identification
-* Requirements
-* Traceability
-* Architecture transformation strategy
-
-**Primary question:**
-
-> What exists today, how does it operate, and what problems must the architecture solve?
-
----
-
-## Phase 1 — Azure Landing Zone
-
-**Directory:** `01-azure-landing-zone`
-
-Establish the Azure platform foundation required to support the enterprise environment.
-
-Focus areas include:
-
-* Management groups
-* Subscription architecture
-* Platform organization
-* Identity foundations
-* Connectivity foundations
-* Logging foundations
-* Platform architecture
-* Resource organization
-
-**Primary question:**
-
-> What foundational Azure architecture should workloads inherit?
-
----
-
-## Phase 2 — Cloud Governance
-
-**Directory:** `02-cloud-governance`
-
-Establish enterprise cloud governance and enforce architectural standards.
-
-Focus areas include:
-
-* Azure Policy
-* Policy initiatives
-* Governance baselines
-* Compliance
-* Naming standards
-* Tagging
-* Exceptions
-* Resource lifecycle controls
-* Policy-as-code
-
-**Primary question:**
-
-> How do we make the desired architecture repeatable and enforceable at scale?
-
----
-
-## Phase 3 — Zero Trust Identity
-
-**Directory:** `03-zero-trust-identity`
-
-Develop the identity architecture around Zero Trust and least privilege.
-
-Focus areas include:
-
-* Microsoft Entra ID
-* RBAC
-* Privileged Identity Management
-* Conditional Access
-* Workload identities
-* Entitlement architecture
-* Privileged access
-* Identity governance
-
-**Primary question:**
-
-> Who or what should have access to which resources, under what conditions, and for how long?
-
----
-
-## Phase 4 — Network Modernization
-
-**Directory:** `04-network-modernization`
-
-Modernize enterprise cloud connectivity and segmentation.
-
-Focus areas include:
-
-* Network topology
-* Segmentation
-* Private networking
-* Firewall architecture
-* DNS
-* Hybrid connectivity
-* ExpressRoute
-* Traffic inspection
-* Network security controls
-
-**Primary question:**
-
-> How should systems communicate while minimizing unnecessary trust and exposure?
-
----
-
-## Phase 5 — Security Operations
-
-**Directory:** `05-security-operations`
-
-Develop the monitoring, detection, and response architecture.
-
-Focus areas include:
-
-* Microsoft Sentinel
-* Microsoft Defender
-* Azure Monitor
-* Log Analytics
-* Detection engineering
-* Security telemetry
-* Incident response
-* Security operations architecture
-
-**Primary question:**
-
-> How do we know when something is wrong, and how do we respond?
-
----
-
-## Phase 6 — DevSecOps
-
-**Directory:** `06-devsecops`
-
-Integrate security and architecture controls into the engineering lifecycle.
-
-Focus areas include:
-
-* Infrastructure as Code
-* Azure DevOps
-* CI/CD
-* Policy as Code
-* Secrets management
-* Pipeline security
-* Software supply-chain security
-* Automated validation
-* Deployment controls
-
-**Primary question:**
-
-> How do we make secure architecture part of the delivery system rather than a manual checkpoint?
-
----
-
-## Phase 7 — Data Protection
-
-**Directory:** `07-data-protection`
-
-Develop the architecture for protecting enterprise information throughout its lifecycle.
-
-Focus areas include:
-
-* Data classification
-* Encryption
-* Key management
-* Microsoft Purview
-* DLP
-* Retention
-* Data governance
-* Data lifecycle controls
-
-**Primary question:**
-
-> What data are we protecting, and what controls should follow that data throughout its lifecycle?
-
----
-
-## Phase 8 — AI Security
-
-**Directory:** `08-ai-security`
-
-Extend enterprise security architecture into AI-enabled systems.
-
-Focus areas include:
-
-* AI governance
-* Model security
-* AI identity
-* Data protection
-* Prompt security
-* RAG security
-* Monitoring
-* AI threat modeling
-
-**Primary question:**
-
-> How should AI systems be introduced without bypassing existing security, identity, and data-governance principles?
-
----
-
-## Phase 9 — DLV FinTech Platform
-
-**Directory:** `09-dlv-fintech-platform`
-
-Apply the architecture principles developed throughout the portfolio to the **Dynamic Liquidity & Velocity (DLV) FinTech Platform**.
-
-This phase serves as an applied architecture exercise incorporating lessons and controls developed throughout the previous phases.
-
-**Primary question:**
-
-> Can the architecture principles developed throughout the portfolio be applied coherently to a complex platform?
-
----
-
-# Architecture Journey
-
-```text
-Enterprise Assessment
-        ↓
-Azure Landing Zone
-        ↓
-Cloud Governance
-        ↓
-Zero Trust Identity
-        ↓
-Network Modernization
-        ↓
-Security Operations
-        ↓
-DevSecOps
-        ↓
-Data Protection
-        ↓
-AI Security
-        ↓
-DLV FinTech Platform
-```
-
-The objective is not simply to reach the bottom of this roadmap.
-
-The objective is to demonstrate **why each architectural change was necessary, what evidence supported the decision, how the solution was engineered, how it was validated, and what was learned from the process.**
-
----
-
-## Repository Status
-
-**Active development — architecture and implementation are subject to change as the lab progresses.**
-
-This repository represents a learning, engineering, and architecture environment. Content should be evaluated in the context of the phase and point in time in which it was created.
-
+[LinkedIn](https://www.linkedin.com/in/johnhilton1/) · [GitHub](https://github.com/Bobby360720)
