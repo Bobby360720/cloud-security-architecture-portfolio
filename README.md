@@ -41,6 +41,8 @@ Platform services provide connectivity, management and security capabilities. La
 
 Microsoft Entra ID, Azure Policy, monitoring, security operations and automation operate across these boundaries.
 
+![AFG Enterprises Current-State Architecture](00-enterprise-assessment/diagrams/images/current-state-architecture.png)
+
 ### Current-State Architecture
 
 The detailed diagram is maintained in the [Phase 0 architecture documentation](00-enterprise-assessment/current-state/current-state-architecture.md).
