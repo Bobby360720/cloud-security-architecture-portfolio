@@ -160,6 +160,7 @@ Security Operations
 
 No single architectural plane can therefore be assessed independently.
 
+![AFG Enterprises Current-State Architecture](../diagrams/images/current-state-architecture.png)
 ---
 
 # 5. Azure Organizational Architecture
