@@ -20,30 +20,16 @@ exposure patterns.
 
 ## Findings
 
-  -----------------------------------------------------------------------
-  ID                      Finding                 Severity
-  ----------------------- ----------------------- -----------------------
-  NET-01                  Public exposure is not  High
-                          consistently governed   
+## Findings
 
-  NET-02                  Private endpoint        High
-                          adoption varies by      
-                          workload                
-
-  NET-03                  NSG rule ownership and  Medium-High
-                          normalization require   
-                          improvement             
-
-  NET-04                  DNS governance differs  Medium
-                          between legacy and      
-                          modern workloads        
-
-  NET-05                  Egress standards are    High
-                          incomplete              
-
-  NET-06                  Legacy network patterns High
-                          do not fully align with 
-                          target segmentation     
+| ID | Finding | Severity |
+|---|---|---|
+| NET-01 | Public exposure is not consistently governed | High |
+| NET-02 | Private endpoint adoption varies by workload | High |
+| NET-03 | NSG rule ownership and normalization require improvement | Medium-High |
+| NET-04 | DNS governance differs between legacy and modern workloads | Medium |
+| NET-05 | Egress standards are incomplete | High |
+| NET-06 | Legacy network patterns do not fully align with target segmentation | High |
   -----------------------------------------------------------------------
 
 ## Target Direction
