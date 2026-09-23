@@ -18,33 +18,32 @@ application registrations, entitlement lifecycle, and emergency access.
 
 ## Findings
 
-  -----------------------------------------------------------------------
-  ID                      Finding                 Severity
-  ----------------------- ----------------------- -----------------------
-  IAM-01                  Some privileged roles   Critical
-                          remain standing         
-                          assignments             
 
-  IAM-02                  Direct user RBAC        High
-                          assignments remain      
+| ID | Finding | Severity |
+|---|---|---|
+| IAM-01 | Some privileged roles remain standing assignments | Critical |
+| IAM-02 | Direct user RBAC assignments remain | High |
+| IAM-03 | Workload identity ownership is incomplete | Critical |
+| IAM-04 | Client-secret usage remains significant | Critical |
+| IAM-05 | Access Reviews are not universal for privileged groups | High |
+| IAM-06 | Entitlement lifecycle is not the default access model | Medium-High |
+| IAM-07 | API permission review is inconsistent | High |
 
-  IAM-03                  Workload identity       Critical
-                          ownership is incomplete 
 
-  IAM-04                  Client-secret usage     Critical
-                          remains significant     
+## Finding Management
 
-  IAM-05                  Access Reviews are not  High
-                          universal for           
-                          privileged groups       
+IAM-01 through IAM-07 are modeled enterprise findings
+documented during Phase 0.
 
-  IAM-06                  Entitlement lifecycle   Medium-High
-                          is not the default      
-                          access model            
+The AFG Security Governance Portal's Active Findings
+Register tracks their validation, ownership, remediation,
+risk relationships, and closure evidence.
 
-  IAM-07                  API permission review   High
-                          is inconsistent         
-  -----------------------------------------------------------------------
+These findings are not confirmed vulnerabilities in
+the physical Azure architecture lab.
+
+Engineering validation will be documented separately
+as relevant lab components are implemented.
 
 ## Target Direction
 
