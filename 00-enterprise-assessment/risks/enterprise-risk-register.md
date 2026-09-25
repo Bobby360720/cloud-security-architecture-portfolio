@@ -71,6 +71,32 @@ The following table identifies the modeled assets, business capabilities and arc
 | R-014 | Microsoft Defender for Cloud plans, Azure subscriptions, protected servers, databases, storage and other eligible workloads | Threat protection, vulnerability visibility, security posture management and incident response | Approved Defender coverage baseline; subscription-level plan configuration; resource eligibility inventory; onboarding procedures; coverage monitoring; documented exceptions |
 | R-015 | Non-production subscriptions, development and test databases, storage accounts, application environments and production-derived datasets | Secure software development, testing, protection of sensitive information and regulatory compliance | Data classification; approved non-production data handling; masking or synthetic-data standards; environment isolation; least-privilege access; encryption; retention and disposal controls |
 
+## Risk-Based Remediation Priorities
+
+Remediation priority considers inherent risk severity,
+architecture dependencies, business impact and the
+approved delivery sequence.
+
+Critical risks do not automatically receive the earliest
+implementation phase when prerequisite architecture
+controls must be established first.
+
+| Priority | Risks | Delivery Focus |
+|---|---|---|
+| Foundation | R-001, R-010, R-013 | Landing zone, governance foundations, resilience and hybrid inventory |
+| Governance | R-006, R-008 | Policy exceptions and ownership metadata |
+| Identity | R-002, R-003 | Privileged access and workload identity |
+| Network | R-004 | Public exposure and network security |
+| Security Operations | R-005, R-011, R-014 | Telemetry, detection lifecycle and Defender coverage |
+| Engineering | R-007 | Repeatable IaC and deployment controls |
+| Data Protection | R-009, R-015 | Classification and non-production data protection |
+| AI Security | R-012 | AI security governance and controls |
+
+These groups describe implementation sequencing,
+not a replacement for inherent risk ratings.
+Critical exposures may require interim mitigation
+before their primary delivery phase.
+
 ### Validation and Ownership
 
 The affected assets and dependencies are modeled architecture assumptions, not confirmed production inventory. The proposed accountable teams in the Enterprise Risks table are responsible for coordinating validation and treatment planning, subject to formal ownership assignment.
