@@ -29,6 +29,44 @@ Enterprise Findings Register.
 | F-011 — SecOps lifecycle | R-011 | SEC-012, TR-011 | 5/6 |
 | F-012 — AI governance | R-012 | SEC-013, TR-015 | 8 |
 
+
+
+## Business Requirements Traceability
+
+The following mappings connect AFG Enterprises' business
+requirements to the enterprise risk baseline and planned
+transformation phases.
+
+These are proposed architecture relationships and remain
+subject to Phase 0 review.
+
+| Business Requirement | Business Objective | Enterprise Risks | Primary Phase |
+|---|---|---|---|
+| BR-001 | Scalable cloud governance | R-001, R-006 | 1–2 |
+| BR-002 | Risk reduction without unnecessarily blocking delivery | R-006, R-007 | 2, 6 |
+| BR-003 | Resource ownership and cost accountability | R-008 | 2 |
+| BR-004 | Critical workload resilience | R-010 | 1, 5 |
+| BR-005 | Auditable and explainable architecture decisions | R-001, R-006 | 0–2 |
+| BR-006 | Hybrid workload support during modernization | R-013 | 1, 2, 5 |
+| BR-007 | Repeatable secure deployment patterns | R-007 | 6 |
+| BR-008 | Security readiness for future AI adoption | R-012 | 8 |
+| BR-009 | Measurable governance effectiveness | R-005, R-006 | 2, 5 |
+| BR-010 | Incremental modernization without a greenfield rebuild | R-001, R-013 | 1–8 |
+
+### Cross-Cutting Business Requirements
+
+BR-005 requires significant architecture decisions to be
+documented through Architecture Decision Records (ADRs).
+
+BR-010 establishes incremental modernization as a
+program-wide constraint. It is addressed by ADR-001
+and applies across the transformation phases.
+
+Risk relationships identify where a requirement influences
+risk treatment. They do not imply that the requirement
+has been implemented or validated.
+
+
 ## Additional Enterprise Risk Coverage
 
 The following risks are included in the Enterprise Risk Register but do not
@@ -36,7 +74,7 @@ yet have dedicated F-series architecture finding identifiers.
 
 | Enterprise Risk | Risk Theme | Related Assessment Finding | Primary Phase |
 |---|---|---|---|
-| R-013 | Legacy/Arc governance | NET-06 (partial relationship) | 1/2/5 |
+| R-013 | Legacy/Arc governance | NET-06, NET-06 | 1/2/5 |
 | R-014 | Defender coverage | SOC-06 | 5 |
 | R-015 | Non-production data protection | No numbered finding assigned | 7 |
 
@@ -44,31 +82,38 @@ R-013 covers broader legacy and Azure Arc governance than NET-06 alone.
 R-015 requires a documented assessment source before a numbered finding
 can be assigned.
 
+
 ## Detailed Findings Crosswalk
 
-These relationships are proposed based on the documented finding and risk
-statements. They require review before being treated as approved mappings.
+These mappings are proposed architecture relationships. They do not
+indicate that the modeled findings have been independently validated.
 
-| Enterprise Risk | Detailed Findings |
+| Enterprise Risk | Supporting Detailed Findings |
 |---|---|
 | R-002 | IAM-01, IAM-02, IAM-05, IAM-06 |
 | R-003 | IAM-03, IAM-04, IAM-07 |
 | R-004 | NET-01, NET-02, NET-03, NET-05, NET-06 |
 | R-005 | SOC-01, SOC-02, SOC-03 |
+| R-008 | SOC-07; IAM-03 (secondary relationship) |
 | R-011 | SOC-04, SOC-05 |
-| R-013 | NET-06 (partial relationship) |
+| R-013 | NET-04; NET-06 (secondary relationship) |
 | R-014 | SOC-06 |
 
-### Relationships Requiring Review
+All 20 numbered IAM, NET and SOC findings have a proposed primary
+enterprise-risk mapping.
 
-- NET-04: DNS governance has no confirmed primary enterprise risk.
-- SOC-07: Remediation ownership has no confirmed primary enterprise risk.
-- R-012 and R-015: No corresponding numbered finding in the current
-  Enterprise Findings Register.
-- R-013: Legacy network segmentation is only part of the broader
-  legacy/Arc governance risk.
+## Outstanding Evidence Gaps
 
-Do not create new findings solely to complete the matrix.
+- R-001, R-006, R-007, R-009 and R-010 are supported by
+  cross-domain architecture candidates rather than dedicated
+  numbered findings.
+- R-012 has no corresponding numbered AI security finding.
+- R-013 includes broader Azure Arc governance that is not fully
+  represented by NET-04 and NET-06.
+- R-015 requires a documented assessment source for
+  non-production data protection.
+
+Do not create findings solely to fill gaps in the matrix.
 
 ## Cross-Domain Architecture Candidates
 
@@ -88,16 +133,14 @@ These are proposed relationships, not additional approved findings.
 
 ## Requirements Coverage
 
-The architecture matrix references SEC-001 through SEC-015 and
-TR-001 through TR-015.
 
-TR-016, which requires sanitized architecture evidence across all
-delivery phases, is a cross-cutting requirement and applies to every
-phase.
+Business requirements BR-001 through BR-010 are mapped
+in the Business Requirements Traceability section above.
 
-Business requirements BR-001 through BR-010 are maintained in the
-Business Requirements document. Their detailed risk relationships
-should be reviewed before adding them to this matrix.
+The authoritative requirement statements, priorities
+and success measures remain in
+`requirements/business-requirements.md`.
+
 
 ## Use
 

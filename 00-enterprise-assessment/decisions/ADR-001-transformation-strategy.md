@@ -72,6 +72,39 @@ design, automation, resilience, or engineering maturity.
 The phased approach reduces the likelihood that enforcement controls are
 deployed without understanding dependencies or business impact.
 
+
+## Unresolved Dependencies and Decisions
+
+The following decisions remain open and must be resolved during
+the appropriate transformation phase:
+
+| Decision or Dependency | Resolution Phase |
+|---|---|
+| Final management-group and subscription placement | Phase 1 |
+| Policy enforcement and exception approval model | Phase 2 |
+| Privileged and workload identity migration approach | Phase 3 |
+| Legacy network and private-connectivity dependencies | Phase 4 |
+| Required telemetry and Defender coverage | Phase 5 |
+| Infrastructure-as-Code adoption and deployment controls | Phase 6 |
+| Data classification and non-production safeguards | Phase 7 |
+| AI workload and agent governance requirements | Phase 8 |
+
+These decisions must consider existing business requirements,
+operational constraints, dependencies and accepted risks.
+
+Critical risks requiring immediate treatment must not wait
+solely because their corresponding transformation phase
+occurs later.
+
+## Decision Reconsideration
+
+ADR-001 should be revisited if:
+
+- validation materially changes the assessed risks;
+- business priorities or constraints change;
+- a critical dependency prevents the proposed sequencing;
+- the phased approach cannot deliver required risk reduction.
+
 ## Validation
 
 The decision remains valid if later phases can demonstrate traceability
