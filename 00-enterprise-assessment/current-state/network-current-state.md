@@ -18,7 +18,6 @@ exposure patterns.
 -   private DNS zones;
 -   centralized connectivity subscription.
 
-## Findings
 
 ## Findings
 
