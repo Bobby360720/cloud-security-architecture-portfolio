@@ -38,7 +38,7 @@ The scores below represent the modeled Phase 0 assessment. They have not been in
 | R-004 | Unnecessary public exposure increases attack surface. | 4 | 4 | 16 | High | Mitigate | Network/Workload Owners | 4 |
 | R-005 | Incomplete telemetry prevents timely detection or investigation. | 4 | 4 | 16 | High | Mitigate | Security Operations | 5 |
 | R-006 | Weak exception lifecycle creates permanent unmanaged security debt. | 4 | 4 | 16 | High | Mitigate | Governance/Security | 2 |
-| R-007 | Manual configuration causes drift, inconsistent controls, and weak auditability. | 4 | 4 | 16 | High | Mitigate | Platform Engineering | 6 |
+| R-007 | Manual configuration causes drift, inconsistent controls, and weak auditability | 4 | 4 | 16 | High | Mitigate | Platform Engineering | 6 |
 | R-008 | Missing ownership/criticality metadata delays remediation and incident response. | 4 | 4 | 16 | High | Mitigate | Cloud Governance | 2 |
 | R-009 | Incomplete data classification leads to insufficient protection of sensitive data. | 3 | 5 | 15 | High | Mitigate | Data Governance | 7 |
 | R-010 | Inconsistent recovery testing results in failure to meet business recovery needs. | 3 | 5 | 15 | High | Mitigate | Platform/Workload Owners | 1/5 |
