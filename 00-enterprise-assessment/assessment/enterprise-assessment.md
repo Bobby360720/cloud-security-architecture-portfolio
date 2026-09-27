@@ -250,3 +250,93 @@ The enterprise risk register establishes risk ownership and treatment planning. 
 - [Network Current State](../current-state/network-current-state.md)
 - [Security Operations Current State](../current-state/security-operations-current-state.md)
 - [ADR-001 — Transformation Strategy](../decisions/ADR-001-transformation-strategy.md)
+
+
+
+## Phase 0 Architecture Checkpoint
+
+### Review Disposition
+
+**Status:** Conditional readiness for Phase 1 design.
+
+The Phase 0 baseline documents the modeled enterprise inventory,
+current-state architecture, domain assessments, consolidated risks,
+architecture requirements and phased transformation decision.
+
+The physical lab has separately validated the management-group
+hierarchy, core platform subscription placement and Phase 0 Terraform
+baseline. These engineering results do not validate the full modeled
+enterprise estate or its security-control effectiveness.
+
+Phase 1 architecture design may begin using this baseline. Production
+deployment decisions, control enforcement and risk acceptance require
+the applicable validation and approval evidence.
+
+### Outstanding Risks and Evidence
+
+The 15 enterprise risks remain the modeled Phase 0 risk baseline.
+No residual risk reductions or formal risk acceptances are claimed.
+
+Additional cross-domain evidence is required for:
+
+- R-001: Policy inheritance and subscription governance.
+- R-006: Policy enforcement and exception lifecycle.
+- R-007: Enterprise IaC adoption and configuration drift.
+- R-009: Data classification and protection.
+- R-010: Recovery objectives and restoration testing.
+- R-012: AI workloads, permissions and data flows.
+- R-013: Broader Azure Arc and legacy governance.
+- R-015: Production-like data in non-production environments.
+
+The detailed IAM, NET and SOC findings remain modeled assessment
+findings pending their respective validation activities.
+
+Critical risks R-001, R-002 and R-003 require interim exposure
+assessment and treatment planning rather than waiting solely for
+their scheduled transformation phases.
+
+### Architectural Dependencies
+
+Phase 1 must establish the organizational and operating-model
+foundation for subsequent control implementation:
+
+- Management-group scope before enterprise policy rationalization.
+- Subscription ownership and placement before subscription vending.
+- Platform and workload boundaries before delegated governance.
+- Network and DNS dependencies before private-access migration.
+- Approved control requirements before automated enforcement.
+- Business criticality and ownership before resilience decisions.
+
+ADR-001 remains the accepted transformation strategy. Its unresolved
+design decisions are carried into their designated phases.
+
+### Phase 1 Entry Criteria
+
+Phase 1 design may begin when:
+
+1. The Phase 0 inventory and architecture use a consistent logical
+   enterprise and physical lab representation.
+2. The authoritative risk register and traceability matrix are
+   available as design inputs.
+3. ADR-001 and the incremental brownfield transformation constraint
+   are retained.
+4. The Terraform baseline and its validation limitations are
+   documented.
+5. Unresolved assumptions, evidence gaps and architectural
+   dependencies are explicitly carried forward.
+6. Phase 1 design identifies its required approvals and validation
+   evidence before implementation.
+
+### Checkpoint Outcome
+
+The Phase 0 assessment provides a documented basis for beginning
+Phase 1 Azure Landing Zone design, subject to the entry criteria
+above.
+
+This checkpoint does not certify enterprise control effectiveness,
+approve production deployment, close unresolved risks or establish
+formal risk acceptance.
+
+SharePoint remains the operational system for findings, risk
+ownership, remediation and acceptance. GitHub remains the
+version-controlled architecture baseline.

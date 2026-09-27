@@ -74,7 +74,7 @@ yet have dedicated F-series architecture finding identifiers.
 
 | Enterprise Risk | Risk Theme | Related Assessment Finding | Primary Phase |
 |---|---|---|---|
-| R-013 | Legacy/Arc governance | NET-06, NET-06 | 1/2/5 |
+| R-013 | Legacy/Arc governance | NET-04, NET-06 | 1/2/5 |
 | R-014 | Defender coverage | SOC-06 | 5 |
 | R-015 | Non-production data protection | No numbered finding assigned | 7 |
 
