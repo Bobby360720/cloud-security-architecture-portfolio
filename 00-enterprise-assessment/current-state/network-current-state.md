@@ -29,7 +29,6 @@ exposure patterns.
 | NET-04 | DNS governance differs between legacy and modern workloads | Medium |
 | NET-05 | Egress standards are incomplete | High |
 | NET-06 | Legacy network patterns do not fully align with target segmentation | High |
-  -----------------------------------------------------------------------
 
 ## Target Direction
 
