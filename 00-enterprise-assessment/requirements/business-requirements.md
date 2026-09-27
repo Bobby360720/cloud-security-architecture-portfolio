@@ -1,7 +1,6 @@
 # Business Requirements
-
-**Organization:** AFG Enterprises (modeled)  
-**Phase:** 0 — Enterprise Assessment
+## Organization: AFG Enterprises (modeled)
+### Phase: 0 — Enterprise Assessment
 
 | ID | Requirement | Priority | Success Measure |
 |---|---|---|---|

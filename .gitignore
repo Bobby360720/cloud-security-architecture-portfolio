@@ -39,3 +39,6 @@ Thumbs.db
 
 # Terraform backend configuration
 **/backend.tf
+
+# Review documents
+*-review.txt
