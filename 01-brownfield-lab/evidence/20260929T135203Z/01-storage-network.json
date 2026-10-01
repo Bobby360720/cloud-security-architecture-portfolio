@@ -1,0 +1,9 @@
+{
+  "AnonymousBlob": false,
+  "Bypass": "AzureServices",
+  "DefaultAction": "Allow",
+  "HTTPSOnly": true,
+  "Name": "stafgbfyjf6tz",
+  "PublicNetwork": "Enabled",
+  "TLS": "TLS1_2"
+}

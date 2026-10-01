@@ -1,0 +1,8 @@
+Collection UTC: 2026-09-29T13:52:13+00:00
+Subscription: 37641d11-22a1-439c-8009-0f0ed078404e
+Resource group: rg-afg-bf-yjf6tz
+Environment: Sandbox
+Source: Azure CLI and Terraform
+Finding 1: Storage public access -> R-004
+Finding 2: Storage shared-key authentication -> R-003
+Finding 3: Key Vault public access -> R-004

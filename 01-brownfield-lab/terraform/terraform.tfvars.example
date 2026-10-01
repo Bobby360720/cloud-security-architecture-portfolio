@@ -1,0 +1,16 @@
+subscription_id = "REPLACE_WITH_YOUR_LAB_SUBSCRIPTION_ID"
+location        = "centralus"
+owner           = "Portfolio"
+ssh_public_key  = "ssh-ed25519 REPLACE_WITH_YOUR_PUBLIC_KEY"
+
+# Default: networking, storage, vault, and empty Function App.
+deploy_vm         = false
+deploy_public_ip  = false
+deploy_function   = true
+deploy_monitoring = false
+deploy_policy     = false
+
+# To access VM directly, use a temporary public IP and your own IP /32.
+# deploy_vm        = true
+# deploy_public_ip = true
+# allowed_ssh_cidr = "YOUR_PUBLIC_IP/32"

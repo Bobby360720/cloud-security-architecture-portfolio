@@ -1,0 +1,7 @@
+{
+  "Name": "kv-afg-bf-6nxews",
+  "NetworkACLs": null,
+  "PublicNetwork": "Enabled",
+  "PurgeProtection": null,
+  "RBAC": true
+}

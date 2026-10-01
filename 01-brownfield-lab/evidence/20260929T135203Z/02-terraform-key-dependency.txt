@@ -1,0 +1,21 @@
+171-
+172-resource "azurerm_linux_function_app" "function" {
+173-  count                      = var.deploy_function ? 1 : 0
+174-  name                       = "func-${var.prefix}-${local.suffix}"
+175-  resource_group_name        = azurerm_resource_group.lab.name
+176-  location                   = var.location
+177-  service_plan_id            = azurerm_service_plan.function[0].id
+178-  storage_account_name       = azurerm_storage_account.lab.name
+179:  storage_account_access_key = azurerm_storage_account.lab.primary_access_key
+180-  https_only                 = true
+181-  identity { type = "SystemAssigned" }
+182-  site_config {
+183-    application_stack { python_version = "3.11" }
+184-  }
+185-  tags = local.tags
+186-}
+187-
+188-resource "azurerm_log_analytics_workspace" "lab" {
+189-  count               = var.deploy_monitoring ? 1 : 0
+190-  name                = "law-${var.prefix}-${local.suffix}"
+191-  location            = var.location

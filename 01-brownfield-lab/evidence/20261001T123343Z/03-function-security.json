@@ -1,0 +1,6 @@
+{
+  "HTTPSOnly": true,
+  "Identity": "SystemAssigned",
+  "Name": "func-afg-bf-6nxews",
+  "PublicNetwork": "Enabled"
+}

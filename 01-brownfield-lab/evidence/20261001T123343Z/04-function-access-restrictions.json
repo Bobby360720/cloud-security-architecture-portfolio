@@ -1,0 +1,23 @@
+{
+  "ipSecurityRestrictions": [
+    {
+      "action": "Allow",
+      "description": "Allow all access",
+      "ipAddress": "Any",
+      "name": "Allow all",
+      "priority": 2147483647
+    }
+  ],
+  "ipSecurityRestrictionsDefaultAction": "Allow",
+  "scmIpSecurityRestrictions": [
+    {
+      "action": "Allow",
+      "description": "Allow all access",
+      "ipAddress": "Any",
+      "name": "Allow all",
+      "priority": 2147483647
+    }
+  ],
+  "scmIpSecurityRestrictionsDefaultAction": "Allow",
+  "scmIpSecurityRestrictionsUseMain": false
+}

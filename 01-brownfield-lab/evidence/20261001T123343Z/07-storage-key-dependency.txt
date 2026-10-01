@@ -1,0 +1,1 @@
+179:  storage_account_access_key = azurerm_storage_account.lab.primary_access_key

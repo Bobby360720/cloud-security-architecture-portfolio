@@ -1,0 +1,9 @@
+{
+  "AnonymousBlob": false,
+  "DefaultToOAuth": false,
+  "HTTPSOnly": true,
+  "Name": "stafgbf6nxews",
+  "PublicNetwork": "Enabled",
+  "SharedKey": true,
+  "TLS": "TLS1_2"
+}
