@@ -25,6 +25,11 @@ variable "security_subscription_id" {
   type        = string
 }
 
+variable "sandbox_subscription_id" {
+  description = "Subscription ID for the sandbox landing zone subscription."
+  type        = string
+}
+
 resource "azurerm_management_group_subscription_association" "connectivity" {
   management_group_id = azurerm_management_group.connectivity.id
   subscription_id     = var.connectivity_subscription_id
@@ -38,4 +43,9 @@ resource "azurerm_management_group_subscription_association" "management" {
 resource "azurerm_management_group_subscription_association" "security" {
   management_group_id = azurerm_management_group.security.id
   subscription_id     = var.security_subscription_id
+}
+
+resource "azurerm_management_group_subscription_association" "sandbox" {
+  management_group_id = azurerm_management_group.sandbox.id
+  subscription_id     = var.sandbox_subscription_id
 }
