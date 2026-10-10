@@ -54,8 +54,8 @@ The architecture is deliberately assessed as an existing brownfield environment 
 | Phase     | Architecture domain    | Status      |
 | --------- | ---------------------- | ----------- |
 | Bootstrap | Engineering foundation | Complete    |
-| 00        | Enterprise Assessment  | In progress |
-| 01        | Azure Landing Zone     | Planned     |
+| 00        | Enterprise Assessment  | Complete    |
+| 01        | Azure Landing Zone     | In progress |
 | 02        | Cloud Governance       | Planned     |
 | 03        | Zero Trust Identity    | Planned     |
 | 04        | Network Modernization  | Planned     |

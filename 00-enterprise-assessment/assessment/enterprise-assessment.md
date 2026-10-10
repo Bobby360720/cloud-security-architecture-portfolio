@@ -8,6 +8,11 @@ The primary architectural concern is not the absence of security tooling. It is 
 
 This Phase 0 assessment establishes an architectural baseline. Its findings and severities are provisional and require validation against authorized environment evidence.
 
+
+Potential Enterprise Acquisitions
+
+AFG Enterprises is evaluating potential acquisitions as part of its long-term growth strategy. Acquired organizations may introduce independent identity providers, directories, applications, and governance practices.
+Future architecture decisions should consider secure identity coexistence, federation, and controlled integration without requiring immediate tenant or identity platform consolidation.
 ## Scope
 
 The assessment covers:
