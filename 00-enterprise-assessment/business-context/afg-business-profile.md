@@ -101,7 +101,10 @@ AFG maintains an enterprise API platform to control:
 - observability; and
 - partner integrations.
 
-This capability provides the business justification for the portfolio's **Kong API Gateway / API management architecture**.
+This capability provides the business justification for the portfolio's **Azure API Management architecture**, which provides a centralized API
+platform for authentication integration, authorization enforcement, rate
+limiting, lifecycle management, partner onboarding, threat protection,
+observability, and external API delivery.
 
 ---
 

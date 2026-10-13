@@ -57,14 +57,11 @@ The following constraints and assumptions apply:
 - The lab implementation shall remain representative and cost-conscious rather than attempting to reproduce a full enterprise Azure estate.
 - Architecture documented in this phase represents the proposed target state unless explicitly supported by validated lab evidence.
 
-## Open Architecture Decisions
+## Architecture Decision Status
 
-The following decisions must be resolved during Phase 1:
+The architecture decisions required to implement these requirements were
+evaluated during Phase 1 and are recorded in
+`management-group-subscription-design.md`.
 
-1. Whether the existing shared-services subscription is sufficiently identity-focused to become `sub-identity-01` or requires a transitional shared-services model.
-2. Whether `sub-prod-apps-02` belongs in the Corp or Online landing-zone hierarchy based on its connectivity and dependency requirements.
-3. Whether disaster-recovery workloads require a dedicated `sub-dr-01` subscription or can remain within existing workload subscriptions.
-4. Whether application and data workloads require separate subscriptions based on ownership, governance, security, lifecycle, cost, or regulatory requirements.
-5. Whether legacy workloads should reside beneath a dedicated transitional `Legacy` management group.
-6. Which existing subscriptions can be moved directly into the target hierarchy and which require staged migration.
-7.Which Phase 1 architecture decisions require formal Architecture Decision Records (ADRs).
+All initial Phase 1 architecture decisions have been resolved or explicitly
+deferred to later-phase detailed design where appropriate.

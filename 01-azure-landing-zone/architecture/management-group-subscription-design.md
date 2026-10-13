@@ -75,7 +75,6 @@ Existing subscriptions migrate toward the target architecture incrementally base
 Tenant Root Group
 └── AFG
     ├── Platform
-    │   ├── Identity
     │   ├── Management
     │   ├── Connectivity
     │   └── Security
@@ -86,14 +85,24 @@ Tenant Root Group
     │   └── Legacy
     │
     ├── Sandbox
+    ├── Onboarding
     └── Decommissioned
 ```
+
+
 
 This hierarchy represents the proposed target-state governance model. It uses three modeled management-group levels beneath the Tenant Root Group and remains within Azure management-group hierarchy limits.
 
 Existing subscriptions will be assessed against the placement criteria defined in this document before migration into the target hierarchy.
 
-AFG should configure the tenant-level default management group for newly created subscriptions so that unclassified subscriptions are routed to a controlled onboarding scope rather than remaining directly beneath the Tenant Root Group. `Sandbox` may serve this purpose in the representative lab; a dedicated onboarding or quarantine scope should be introduced only if a distinct governance requirement justifies it.
+AFG will configure `Onboarding` as the default management group for newly
+created or unclassified subscriptions that are created outside the governed
+subscription-vending process.
+
+Approved subscription vending should place subscriptions directly into their
+intended management group. `Onboarding` is a restrictive temporary holding
+boundary and is not part of the normal workload deployment path.
+
 
 ## 5. Management Group Responsibilities
 
@@ -109,9 +118,10 @@ AFG should configure the tenant-level default management group for newly created
 | `Landing-Zones` | Parent boundary for business and application workloads. | Apply common workload governance while allowing connectivity-specific controls beneath `Corp`, `Online`, and transitional `Legacy` scopes. |
 | `Corp` | Hosts workloads requiring corporate, shared-platform, or hybrid connectivity. | Apply controls appropriate for workloads integrated with enterprise routing, DNS, private connectivity, or hybrid services. |
 | `Online` | Hosts workloads that operate independently of the corporate connectivity model. | Apply controls appropriate for independently connected or internet-oriented workloads without assuming corporate network dependencies. |
-| `Legacy` | Transitional boundary for workloads that cannot immediately meet the target landing-zone baseline. | Isolate approved exceptions and prevent legacy constraints from weakening standard workload governance. |
+| `Legacy` | Transitional boundary for brownfield or acquired workloads that cannot immediately meet the target landing-zone baseline. | Isolate temporary exceptions so legacy constraints do not weaken standard Corp or Online governance. |
 | `Sandbox` | Hosts experimentation, proofs of concept, and temporary learning workloads. | Provide an isolated, cost-conscious environment with restricted production connectivity and defined lifecycle expectations. |
 | `Decommissioned` | Holds subscriptions undergoing controlled retirement. | Restrict new deployment and unnecessary change while retention, evidence, and deletion requirements are completed. |
+| `Onboarding` | Temporary holding boundary for newly created or unclassified subscriptions that have not completed the AFG subscription-placement process. | Apply restrictive baseline controls, require ownership and classification, prevent production use until placement is approved, and move subscriptions promptly to their appropriate target management group. |
 
 The management-group hierarchy is designed around governance requirements rather than organizational reporting structures. Child management groups should exist only when a distinct policy, access, connectivity, lifecycle, or compliance requirement justifies the boundary.
 
@@ -125,15 +135,15 @@ The following model represents the proposed Phase 1 target state.
 
 | Subscription | Target Management Group | Primary Purpose | Status |
 |---|---|---|---|
-| `sub-identity-01` | Platform / Identity | Host Azure-based identity infrastructure and supporting services where dedicated identity isolation is justified. | Pending validation |
-| `sub-management-01` | Platform / Management | Host centralized Azure management and operational services. | Existing |
-| `sub-connectivity-01` | Platform / Connectivity | Host shared enterprise connectivity services such as hub networking, routing, private DNS, firewall services, and hybrid connectivity. | Proposed |
-| `sub-security-01` | Platform / Security | Host centralized security platform capabilities and shared security services. | Proposed |
-| `sub-prod-apps-01` | Landing-Zones / Corp | Host production business applications requiring corporate or hybrid connectivity. | Proposed |
-| `sub-prod-data-01` | Landing-Zones / Corp | Host production data services where a separate subscription is justified by ownership, security, lifecycle, regulatory, or operational requirements. | Pending validation |
+| `sub-shared-services-01` | Platform | Host shared platform infrastructure that does not currently justify placement within Management, Connectivity, Security, or another dedicated platform domain. | Existing modeled subscription |
+| `sub-management-01` | Platform / Management | Host centralized Azure management and operational services. | Existing / Validated |
+| `sub-connectivity-01` | Platform / Connectivity | Host shared enterprise connectivity services such as hub networking, routing, private DNS, firewall services, and hybrid connectivity. | Existing / Validated |
+| `sub-security-01` | Platform / Security | Host centralized security platform capabilities and shared security services. | Existing / Validated |
+| `sub-prod-apps-01` | Landing-Zones / Corp | Host Tier 1 production applications that depend on corporate, hybrid, or shared enterprise connectivity services. | Proposed / Modeled |
+| `sub-prod-data-platform-01` | Landing-Zones / Corp | Host production enterprise data-platform capabilities, governed financial datasets, analytics services, and shared data products requiring dedicated Data Platform ownership and controls. | Proposed / Modeled |
 | `sub-nonprod-apps-01` | Landing-Zones / Corp | Host non-production application workloads requiring corporate or hybrid connectivity. | Proposed |
-| `sub-nonprod-data-01` | Landing-Zones / Corp | Host non-production data services where a separate data boundary is justified. | Pending validation |
-| `sub-prod-apps-02` | Landing-Zones / Online | Host production workloads that operate independently of the corporate connectivity model. | Pending validation |
+| `sub-nonprod-data-platform-01` | Landing-Zones / Corp | Host non-production enterprise data-platform capabilities used for development, testing, analytics engineering, and controlled data-platform validation. | Proposed / Modeled |
+| `sub-prod-digital-services-01` | Landing-Zones / Online | Host Tier 1 customer- and partner-facing digital applications, financial APIs, embedded-finance services, and other externally consumed production services that operate independently of AFG's corporate connectivity model. | Proposed / Modeled |
 | `sub-nonprod-apps-02` | Landing-Zones / Online | Host non-production Online workloads only if a distinct workload and environment boundary is required. | Pending validation |
 | `sub-legacy-01` | Landing-Zones / Legacy | Host existing workloads that temporarily require exceptions from the target landing-zone baseline. | Transitional |
 | `sub-sandbox-01` | Sandbox | Host temporary experimentation, learning, and isolated development workloads. | Proposed |
@@ -144,7 +154,10 @@ Platform subscriptions provide shared enterprise capabilities used across multip
 
 These subscriptions are separated from business workloads to establish clearer ownership, reduce administrative overlap, and support different governance and lifecycle requirements.
 
-The target model includes dedicated management, connectivity, security, and, where justified, identity subscriptions.
+The target model includes dedicated Management, Connectivity, and Security
+platform subscriptions. Additional dedicated platform subscriptions, including
+Identity, should be introduced only when distinct governance requirements
+justify the boundary.
 
 ### 6.2 Workload Subscriptions
 
@@ -152,22 +165,22 @@ Business workloads are placed beneath the `Landing-Zones` hierarchy.
 
 Workload subscriptions are classified according to connectivity model, environment, ownership, security requirements, and lifecycle. Production and non-production workloads may use separate subscriptions while remaining beneath the same `Corp` or `Online` management-group archetype.
 
-### 6.3 Application and Data Separation
+### 6.3 Application and Data Platform Separation
 
-The target model shows separate application and data subscriptions as candidates; this separation is not final.
+AFG maintains dedicated enterprise Data Platform subscriptions because
+shared financial-data and analytics capabilities have distinct ownership,
+data-sensitivity, lifecycle, governance, and operational requirements.
 
-A dedicated data subscription should be created only when one or more of the following provide sufficient justification:
+This separation does not establish a requirement that application databases
+must reside in a dedicated data subscription.
 
-- distinct ownership or database-administration responsibility;
-- stronger access-control requirements;
-- regulatory or contractual scope;
-- materially different network requirements;
-- independent lifecycle or deployment cadence;
-- cost-accountability requirements;
-- reduced operational or security blast radius;
-- materially different data-sensitivity or protection requirements.
+Databases and storage services that form part of an individual workload
+should remain with the owning workload unless a separate boundary is justified
+by ownership, regulatory scope, privileged administration, lifecycle,
+connectivity, data sensitivity, or other criteria defined in Section 8.
 
-If these conditions are not present, application and data services may remain within the same workload subscription and use appropriate resource-group, RBAC, networking, and data-protection boundaries.
+Dedicated Data Platform subscriptions are intended for shared enterprise data
+capabilities rather than general database consolidation.
 
 ### 6.4 Corp and Online Placement
 
@@ -185,11 +198,33 @@ Legacy placement must not become a permanent mechanism for avoiding enterprise c
 
 ### 6.6 Disaster Recovery Architectural Boundary
 
-AFG will default secondary regional recovery resources to the workload's existing subscription unless recovery, administrative isolation, quota, regulatory, or blast-radius requirements justify a separate subscription.
 
-A separate disaster-recovery subscription is technically possible but introduces additional RBAC, networking, policy, recovery-plan, and operational complexity. Regional separation alone is not sufficient justification for creating `sub-dr-01`.
+AFG requires resilient recovery capabilities for Tier 1 financial,
+payment, API, and transaction workloads. However, business criticality
+alone does not justify a separate Azure subscription for disaster
+recovery.
 
-A dedicated DR subscription should therefore be introduced only when business-continuity analysis demonstrates a meaningful requirement for independent administration, capacity, quota, security isolation, or recovery operations. This remains an open architecture decision under **ALZ-DEC-003**.
+The target architecture therefore keeps secondary regional recovery
+resources associated with the owning workload subscription by default.
+
+A separate recovery subscription may be introduced when a documented
+architecture requirement exists for:
+
+- independent recovery administration;
+- regulatory or contractual isolation;
+- distinct Azure quota or capacity requirements;
+- security or cyber-recovery isolation;
+- independent recovery operations;
+- materially reduced subscription-level blast radius.
+
+Regional separation alone does not justify creation of a dedicated
+disaster-recovery subscription.
+
+The current-state `sub-dr-01` remains part of the modeled brownfield
+environment and will be assessed during detailed resilience design to
+determine whether its services should be retained, redistributed to
+owning workload subscriptions, or transitioned into a specialized
+recovery-platform capability.
 
 ### 6.7 Brownfield Subscription Migration
 
@@ -211,6 +246,30 @@ Each subscription should be evaluated for:
 
 Subscription migration should occur incrementally and should not require workload rebuild solely to achieve alignment with the target hierarchy.
 
+
+### 6.8 Shared Services Subscription
+
+`sub-shared-services-01` remains a transitional shared platform subscription.
+
+AFG will not rename or replace the subscription with `sub-identity-01` solely because some hosted services may integrate with identity capabilities.
+
+A dedicated identity subscription should be introduced only when Azure-hosted identity infrastructure requires a distinct ownership, security, networking, lifecycle, or operational boundary.
+
+Microsoft Entra ID, customer identity services, Okta SaaS capabilities, application registrations, and other tenant-level identity control-plane services do not by themselves require an Azure Identity subscription.
+
+### 6.9 Target-State Subscription Rename
+
+The current-state enterprise model identifies `sub-prod-apps-02` as a
+generic production business-application subscription.
+
+Phase 1 proposes renaming this target-state workload boundary to
+`sub-prod-digital-services-01` to better communicate its business purpose.
+
+The target subscription represents customer- and partner-facing digital
+financial services, including APIs and embedded-finance capabilities.
+
+The rename is architectural and does not indicate that a physical Azure
+subscription has been renamed or deployed in the lab.
 ## 7. Subscription Placement Criteria
 
 AFG shall use consistent placement criteria when assigning subscriptions to the target management-group hierarchy.
@@ -631,6 +690,18 @@ Before an existing subscription is moved into the target hierarchy, AFG should a
 
 Custom RBAC role definitions require particular attention because a subscription move can break the hierarchy path between a role definition scoped at a previous parent management group and assignments within the subscription.
 
+Current / acquired workload
+        ↓
+Can meet target baseline?
+   ┌────┴────┐
+  Yes        No
+   ↓          ↓
+Corp/Online  Legacy
+               ↓
+        Remediate / Modernize
+               ↓
+        Corp / Online / Retire
+
 ### 10.3 Direct Migration
 
 A subscription may move directly into the target hierarchy when:
@@ -658,6 +729,7 @@ Legacy placement should identify:
 - the required review cadence.
 
 The `Legacy` management group is not a permanent destination.
+
 
 ### 10.5 Policy Compatibility During Migration
 
@@ -733,6 +805,44 @@ The brownfield transition is successful when:
 - temporary exceptions are documented and reviewable;
 - subscription moves do not introduce unacceptable service disruption;
 - transitional legacy placement trends toward remediation, migration, or retirement.
+
+### 10.10 Migration Waves
+
+AFG will migrate existing subscriptions through controlled waves.
+
+1. **Wave 0 — Architecture Preparation**
+   - validate the target management-group hierarchy;
+   - review inherited policy effects;
+   - identify RBAC and custom-role dependencies;
+   - establish rollback and validation procedures.
+
+2. **Wave 1 — Platform Subscriptions**
+   - Connectivity;
+   - Management;
+   - Security;
+   - Shared Services where appropriate.
+
+3. **Wave 2 — Non-Production Workloads**
+   - non-production application subscriptions;
+   - non-production Data Platform subscriptions;
+   - other low-risk representative workloads.
+
+4. **Wave 3 — Production Workloads**
+   - Corp production workloads;
+   - Online digital services;
+   - production Data Platform workloads.
+
+5. **Wave 4 — Legacy and Complex Workloads**
+   - exception-heavy subscriptions;
+   - acquired workloads;
+   - workloads requiring staged remediation.
+
+6. **Wave 5 — Retirement**
+   - move eligible subscriptions to `Decommissioned`;
+   - complete retention and dependency checks;
+   - cancel or delete subscriptions when approved.
+
+Movement between waves depends on readiness and validation rather than a fixed calendar sequence.
 
 ## 11. Subscription Lifecycle
 
@@ -930,20 +1040,20 @@ The subscription lifecycle should enable AFG to answer the following questions f
 
 A subscription that cannot answer these questions should be treated as a governance gap requiring review.
 
-## 12. Open Architecture Decisions
+## 12. Architecture Decision Log
 
 The following decisions remain unresolved and require evidence or analysis before the Phase 1 target state is considered final.
 
 | Decision ID | Decision | Current Status | Evidence / Analysis Required |
 |---|---|---|---|
-| `ALZ-DEC-001` | Determine whether the existing shared-services subscription should become `sub-identity-01` or remain a transitional shared-services subscription. | Open | Inventory current resources, confirm ownership, identify non-identity dependencies, and assess whether identity isolation provides sufficient governance value. |
-| `ALZ-DEC-002` | Determine whether `sub-prod-apps-02` belongs beneath `Corp` or `Online`. | Open | Validate routing, hybrid connectivity, DNS, firewall, private connectivity, and dependencies on shared enterprise services. |
-| `ALZ-DEC-003` | Determine whether disaster-recovery workloads require a dedicated `sub-dr-01`. | Open | Validate recovery operating model, administrative isolation, quota/capacity requirements, security isolation, ownership, and whether same-subscription multi-region recovery is sufficient. |
-| `ALZ-DEC-004` | Determine whether application and data workloads require separate subscriptions. | Open | Evaluate ownership, data sensitivity, lifecycle, RBAC, regulatory scope, cost accountability, networking, and operational isolation. |
-| `ALZ-DEC-005` | Confirm whether legacy workloads should use a dedicated `Legacy` management group. | Proposed | Identify workloads requiring exceptions, assess whether exceptions would otherwise weaken the standard Corp or Online baseline, and define exit criteria. |
-| `ALZ-DEC-006` | Determine the migration sequence for existing subscriptions. | Open | Assess current placement, dependencies, policy compatibility, custom RBAC dependencies, operational risk, and business criticality. |
-| `ALZ-DEC-007` | Determine which Phase 1 decisions require formal Architecture Decision Records. | Open | Identify decisions that are significant, difficult to reverse, cross-domain, or likely to require future reconsideration. |
-| `ALZ-DEC-008` | Determine the default management group for newly created or unclassified subscriptions. | Open | Decide whether `Sandbox` is sufficient for the representative model or whether a dedicated onboarding/quarantine boundary has distinct governance requirements. |
+| `ALZ-DEC-001` | Determine whether AFG requires `sub-identity-01`. | Closed | Retain `sub-shared-services-01`. Current architecture evidence does not identify sufficient Azure-hosted identity infrastructure to justify a dedicated Identity subscription. Reconsider if future identity services require a distinct governance boundary. |
+| `ALZ-DEC-002` | Determine whether the modeled `sub-prod-apps-02` belongs beneath `Corp` or `Online`. | Closed — Modeled | Place the target-state workload beneath `Landing-Zones / Online` and rename it `sub-prod-digital-services-01`. The subscription represents customer- and partner-facing applications, APIs, and embedded-finance services that operate independently of the corporate connectivity model. Validate placement when a representative workload is deployed. |
+| `ALZ-DEC-003` | Determine whether AFG requires a dedicated `sub-dr-01`. | Closed — Target Architecture | A dedicated DR subscription will not be part of the default target workload architecture. Recovery resources remain associated with the owning workload subscription unless independent administration, regulatory isolation, capacity, cyber-recovery, or other material requirements justify a separate boundary. The existing modeled `sub-dr-01` remains transitional pending detailed resilience assessment. |
+| `ALZ-DEC-004` | Determine whether application and data workloads require separate subscriptions. | Closed — Modeled | Retain dedicated enterprise Data Platform subscriptions because the modeled environment has distinct Data Platform ownership and materially different data-governance, sensitivity, lifecycle, and operational requirements. Application-specific databases remain with their owning workload unless separate boundary criteria justify isolation. |
+| `ALZ-DEC-005` | Confirm whether legacy workloads should use a dedicated `Legacy` management group. | Closed — Target Architecture | Retain `Landing-Zones / Legacy` as a transitional governance boundary for brownfield and acquired workloads that cannot immediately comply with the standard Corp or Online baseline. Legacy placement requires documented ownership, risk, exceptions, target disposition, review cadence, and exit criteria. |
+| `ALZ-DEC-006` | Determine the migration sequence for existing subscriptions. | Closed — Migration Strategy | AFG will use a wave-based brownfield migration model: establish and validate the target hierarchy, migrate core platform subscriptions, validate low-risk and non-production workloads, migrate standard production workloads, transition complex legacy workloads, and finally retire subscriptions through `Decommissioned`. Exact subscription sequencing remains implementation-dependent and will be prioritized by risk, dependency complexity, business criticality, and migration readiness. |
+| `ALZ-DEC-007` | Determine which Phase 1 decisions require formal Architecture Decision Records. | Closed — Governance Approach | Phase 1 will use the management-group and subscription design as the working decision log. Formal ADRs will be created only after the target architecture is stable and only for decisions that establish long-lived, cross-domain, difficult-to-reverse, or materially consequential architecture standards. Routine implementation and subscription-placement decisions will remain documented within the design artifact. |
+| `ALZ-DEC-008` | Determine the default management group for newly created or unclassified subscriptions. | Closed — Target Architecture | Create `AFG / Onboarding` as the tenant default management group for subscriptions that are created outside the governed subscription-vending process. `Onboarding` serves as a restrictive temporary holding boundary until ownership, purpose, environment, connectivity, data requirements, and target placement are validated. Approved subscription vending places subscriptions directly into their intended management group rather than routing them through `Onboarding`. |
 
 ### 12.1 Decision Governance
 
@@ -983,9 +1093,18 @@ Based on the current Phase 1 design, likely ADR candidates include:
 - use of Corp, Online, Legacy, Sandbox, and Decommissioned governance boundaries;
 - production/non-production separation through subscription boundaries rather than environment management groups;
 - legacy workload transition strategy;
-- disaster-recovery subscription strategy if ALZ-DEC-003 results in a long-lived enterprise standard.
+- - the workload-recovery subscription strategy if later resilience design
+  materially changes the Phase 1 default;.
 
 These remain candidates until the underlying decisions are validated and formally recorded.
+### ADR Review Point
+
+Formal ADR creation is deferred until the Phase 1 target architecture
+has been reviewed and validated.
+
+At Phase 1 closeout, AFG will evaluate closed architecture decisions
+against the ADR criteria and create only the records necessary to
+preserve significant long-term architecture rationale.
 
 ## 13. Requirement Traceability
 
@@ -1008,7 +1127,10 @@ This section maps the Phase 1 Azure Landing Zone requirements to the design resp
 
 The management-group and subscription design provides a direct response to each Phase 1 architecture requirement.
 
-Open architecture decisions identified in Section 12 remain subject to validation and should not be treated as final implementation decisions until the required evidence and analysis are complete.
+Architecture decisions recorded in Section 12 represent the approved Phase 1
+target-state design. Decisions identified as modeled or dependent on later
+detailed design must not be represented as implemented or validated until
+supporting evidence is produced.
 
 Where later phases define detailed identity, governance, networking, security operations, DevSecOps, data protection, or AI controls, those artifacts should reference the relevant Phase 1 platform boundaries rather than redefining them.
 
@@ -1071,16 +1193,21 @@ Acceptable evidence may include:
 
 Evidence must not imply that modeled enterprise capabilities have been implemented when they have not been validated in the lab.
 
-### 14.4 Open Decision Validation
+### 14.4 Architecture Decision Validation
 
-Open architecture decisions from Section 12 may be closed when:
+Closed architecture decisions remain subject to validation as the target
+architecture is implemented.
 
-- relevant dependencies have been identified;
-- reasonable alternatives have been considered;
-- the selected option has documented rationale;
-- major risks and tradeoffs are understood;
-- an accountable decision owner is identified;
-- an ADR is created where the decision meets the ADR criteria.
+A Phase 1 decision should be reconsidered when:
+
+- implementation evidence materially contradicts an architectural assumption;
+- previously unknown dependencies change the intended placement or boundary;
+- business, regulatory, security, or operational requirements change;
+- a later architecture phase identifies a material cross-domain conflict;
+- the selected design cannot achieve the intended risk-reduction outcome.
+
+A decision that is modeled but not physically implemented must remain clearly
+identified as modeled until representative validation evidence is available.
 
 ### 14.5 Phase 1 Design Completion Criteria
 
