@@ -139,7 +139,7 @@ Detailed decisions are maintained in:
 | `architecture/landing-zone-requirements.md` | Phase 1 architecture requirements and Phase 0 drivers |
 | `architecture/management-group-subscription-design.md` | Target management-group, subscription, lifecycle, and migration design |
 | `infrastructure-as-code/terraform/` | Active Terraform implementation |
-| `evidence/phase1-landing-zone-validation.md` | Validation evidence distinguishing implemented state from modeled architecture |
+| `architecture/resource-organization-standards.md` | Resource organization, naming, tagging, ownership, and brownfield-normalization standards |
 
 ## Phase Status
 
