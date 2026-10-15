@@ -38,7 +38,7 @@ Thumbs.db
 !**/.terraform.lock.hcl
 
 # Terraform backend configuration
-**/backend.tf
 
 # Review documents
 *-review.txt
+**/backend.hcl

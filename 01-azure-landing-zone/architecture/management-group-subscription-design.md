@@ -1042,7 +1042,10 @@ A subscription that cannot answer these questions should be treated as a governa
 
 ## 12. Architecture Decision Log
 
-The following decisions remain unresolved and require evidence or analysis before the Phase 1 target state is considered final.
+The following decision log records the architecture decisions evaluated during
+Phase 1. All initial Phase 1 decisions are closed; entries identified as
+modeled or dependent on later detailed design remain subject to validation
+before being represented as implemented.
 
 | Decision ID | Decision | Current Status | Evidence / Analysis Required |
 |---|---|---|---|
@@ -1057,7 +1060,11 @@ The following decisions remain unresolved and require evidence or analysis befor
 
 ### 12.1 Decision Governance
 
-An open architecture decision should not be treated as approved until the required evidence has been reviewed and the decision rationale is documented.
+Closed architecture decisions establish the approved Phase 1 design baseline.
+
+Decisions identified as modeled or dependent on later detailed design must
+remain clearly distinguished from physically implemented and validated
+architecture.
 
 Significant decisions should record:
 
@@ -1084,19 +1091,24 @@ A formal Architecture Decision Record should be created when a decision:
 
 Routine implementation details do not require individual ADRs.
 
-### 12.3 Current ADR Candidates
+### 12.3 Phase 1 ADR Determination
 
-Based on the current Phase 1 design, likely ADR candidates include:
+Following implementation and validation of the Phase 1 target architecture,
+two decisions meet the formal ADR criteria:
 
-- adoption of the `AFG` intermediate-root management-group model;
-- separation of Platform and Landing-Zones;
-- use of Corp, Online, Legacy, Sandbox, and Decommissioned governance boundaries;
-- production/non-production separation through subscription boundaries rather than environment management groups;
-- legacy workload transition strategy;
-- - the workload-recovery subscription strategy if later resilience design
-  materially changes the Phase 1 default;.
+- `ADR-002` — Azure Landing Zone Governance Boundary Model
+- `ADR-003` — Brownfield Subscription Transition Strategy
 
-These remain candidates until the underlying decisions are validated and formally recorded.
+These ADRs preserve the long-lived architecture rationale for the enterprise
+governance hierarchy and the brownfield transition approach.
+
+Other Phase 1 decisions remain documented in this design artifact and do not
+require individual ADRs at this time.
+
+Modeled decisions may be reconsidered for ADR creation in later phases if
+implementation or detailed design establishes a long-lived enterprise
+standard.
+
 ### ADR Review Point
 
 Formal ADR creation is deferred until the Phase 1 target architecture
