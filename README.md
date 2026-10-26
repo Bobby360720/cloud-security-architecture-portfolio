@@ -175,7 +175,7 @@ architecture.
 | Bootstrap | Engineering Foundation | **Complete** |
 | 00 | Enterprise Assessment | **Baseline complete** |
 | 01 | Azure Landing Zone | **Complete — implemented and validated** |
-| 02 | Cloud Governance | **Next** |
+| 02 | Cloud Governance | **In Progress** |
 | 03 | Enterprise Identity Security | Planned — flagship pillar |
 | 04 | Network Modernization | Planned |
 | 05 | Security Operations | Planned |
