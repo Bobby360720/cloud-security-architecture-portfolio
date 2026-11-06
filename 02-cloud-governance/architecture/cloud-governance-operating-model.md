@@ -166,12 +166,15 @@ At implementation time, review at least these failure modes:
 | Security telemetry and incident coordination | R-005, R-011; SEC-005, SEC-012; TR-010, TR-011 | MON-01, MON-02 | Phases 5 and #26 evidence definition |
 | Brownfield/acquired service onboarding | R-013; BR-006, BR-010; SEC-015 | GOV-01, GOV-03 | Phase 1 hierarchy and transition validation |
 
+**Validation boundary:** The references above establish architectural traceability and intended implementation responsibilities. They do not indicate that every listed control has been implemented or tested. Current Phase 2 lab evidence is limited to the representative GR-02 validation documented under Issue #29. Remaining governance capabilities require separate implementation and validation in their assigned workstreams.
+
 ## 12. Completion, validation and unresolved adoption decisions
 
 **P02-07 design can close when:** the seven functions, decision boundaries, RACI, policy-as-code stewardship, operational cadence, escalation triggers, metrics and dependency links are reviewed and committed. This establishes a **modeled architecture design**, not a formally operating governance organization.
 
 **Operational adoption decisions still required:** named authorities and alternates; security/architecture approval delegation; change authority and emergency delegation; segregation-of-duties implementation; reporting access; cadence approval; policy release controls; SharePoint workflow configuration; service levels and agreed response targets.
 
-**Representative validation planned under #29:** inspect actual policy assignment ownership and permissions; test an authorized technical exemption with an independently represented approval record; verify that policy and IaC evidence identify their source and scope. No completed tests or organizational approvals are asserted in this document.
+**Representative validation completed under #29:** GR-02 validation demonstrated Azure Policy Audit detection, seven passing local OPA/Rego unit tests, compliant Terraform plan evaluation, Azure Policy Deny enforcement, and successful creation of a compliant Storage account. The dated validation results are documented in [Phase 2 Governance Validation Evidence](../evidence/phase2-governance-validation.md).
 
+**Not validated:** Management-group assignment inheritance, operational role delegation, end-to-end exception approvals, Azure Policy exemptions, centrally governed CI/CD enforcement, and automated remediation. These remain modeled capabilities or deferred implementation activities and must not be represented as operationally validated.
 **Phase 2 closeout (#30):** verify that the governance operating model aligns with the Phase 0 requirements and other Phase 2 architecture artifacts and that any tested controls have separate dated, sanitized evidence.

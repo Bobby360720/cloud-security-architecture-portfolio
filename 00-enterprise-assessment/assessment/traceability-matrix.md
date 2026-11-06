@@ -43,7 +43,7 @@ subject to Phase 0 review.
 | Business Requirement | Business Objective | Enterprise Risks | Primary Phase |
 |---|---|---|---|
 | BR-001 | Scalable cloud governance | R-001, R-006 | 1–2 |
-| BR-002 | Risk reduction without unnecessarily blocking delivery | R-006, R-007 | 2, 6 |
+| BR-002 | Risk reduction without unnecessarily blocking delivery | R-006, R-007; R-004 (supporting) | 2, 4, 6 |
 | BR-003 | Resource ownership and cost accountability | R-008 | 2 |
 | BR-004 | Critical workload resilience | R-010 | 1, 5 |
 | BR-005 | Auditable and explainable architecture decisions | R-001, R-006 | 0–2 |
@@ -52,6 +52,8 @@ subject to Phase 0 review.
 | BR-008 | Security readiness for future AI adoption | R-012 | 8 |
 | BR-009 | Measurable governance effectiveness | R-005, R-006 | 2, 5 |
 | BR-010 | Incremental modernization without a greenfield rebuild | R-001, R-013 | 1–8 |
+
+**R-004 supporting business requirement:** BR-002 supports risk-based public network exposure governance, including progressive enforcement, documented exceptions, and remediation paths. This is a supporting architectural relationship rather than a change to BR-002's original business objective. GR-02 provides representative Phase 2 validation; broader network-security implementation remains within the designated network-security workstream.
 
 ### Cross-Cutting Business Requirements
 

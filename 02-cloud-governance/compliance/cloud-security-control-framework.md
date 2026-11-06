@@ -115,7 +115,9 @@ Coverage is not equivalent to compliance, and these targets do not establish act
 
 ## 8. Delivery Boundaries, Ownership and Open Dependencies
 
-**Proposed ownership is not formal assignment.** The operating model, approvers, escalation routes and exception decision rights will be specified in Issue #28. The enterprise risk register's accountable teams remain the Phase 0 reference; operational SharePoint tracking remains the source for risk ownership and acceptance. GitHub maintains this version-controlled architecture baseline.
+**Proposed ownership is not formal assignment.** The governance responsibilities, RACI, escalation routes, and proposed decision rights are documented in [P02-07 — Cloud Governance Operating Model](../architecture/cloud-governance-operating-model.md). These constitute a modeled architecture baseline, not formally delegated organizational authority.
+
+The Phase 0 enterprise risk register remains authoritative for existing risk accountability. SharePoint remains the operational system of record for findings, exceptions, risk ownership, and acceptance. GitHub maintains the version-controlled architecture baseline.
 
 | Follow-on issue | Responsibility / boundary |
 | --- | --- |
@@ -123,7 +125,7 @@ Coverage is not equivalent to compliance, and these targets do not establish act
 | #25 — Preventive, Detective and Corrective Guardrails | Specific guardrail mechanisms and control effects |
 | #26 — Compliance Monitoring and Evidence Architecture | Reporting, evidence sources, retention and monitoring design |
 | #27 — Governance Exception and Risk-Acceptance Process | Exception workflow, approval authority, expiry and compensating controls |
-| #28 — Governance Roles and Operating Model | Confirmed RACI, owners, escalation and accountability |
+| #28 — Governance Roles and Operating Model | Modeled RACI, proposed decision rights, escalation and accountability (design completed) |
 | #29 — Representative Control Implementation and Validation | Low-cost Azure lab deployment, tests and evidence |
 | #30 — Architecture Review | End-to-end consistency, requirements traceability and milestone exit review |
 
