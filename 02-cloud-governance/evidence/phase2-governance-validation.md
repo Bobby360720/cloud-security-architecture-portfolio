@@ -204,3 +204,35 @@ The available evidence demonstrates that Azure Policy detected an existing nonco
 The evidence supports a limited but defensible preventive and detective governance demonstration for AFG Enterprises.
 
 Final cleanup confirmation and repository commit remain outstanding.
+
+
+### P02-08-GR02-ALLOW-01 — Compliant Azure Storage Deployment
+
+**Validation date:** November 6, 2026  
+**Control:** GR-02 / NET-01  
+**Evidence classification:** Validated Azure resource deployment  
+**Environment:** Sandbox subscription, isolated resource group `rg-afg-policy-allow-test`
+
+**Objective:** Confirm that Azure Policy permits the deployment of a compliant Storage account while the GR-02 Deny assignment is active.
+
+**Policy configuration:**
+- Policy: Storage accounts should disable public network access
+- Assignment: `afg-gr02-storage-allow-test`
+- Effect: `Deny`
+- Enforcement mode: `Default`
+- Scope: Isolated resource group
+
+**Observed resource configuration:**
+- Storage account: `afgallow1793992987`
+- Provisioning state: `Succeeded`
+- Public network access: `Disabled`
+- Anonymous blob access: `false`
+- Minimum TLS version: `TLS1_2`
+
+**Test outcome: PASS**
+
+Azure successfully provisioned the compliant Storage account within the scope of the enforced Deny policy assignment.
+
+**Limitations:** This test demonstrates successful resource creation under the configured policy assignment. It does not independently confirm a completed Azure Policy compliance evaluation, management-group inheritance, or CI/CD enforcement.
+
+**Cleanup status:** Complete.
