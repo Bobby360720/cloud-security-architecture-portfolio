@@ -1,0 +1,16 @@
+departmentId,departmentName,businessUnit,location,managerEmployeeId,costCenter
+D001,Executive Office,Corporate,Atlanta,AFG-10000,CC-001
+D002,Finance & Accounting,Corporate,Atlanta,AFG-10005,CC-002
+D003,People & Culture,Corporate,Atlanta,AFG-10015,CC-003
+D004,Legal & Compliance,Corporate,Atlanta,AFG-10022,CC-004
+D005,Risk Management,Risk,Atlanta,AFG-10031,CC-005
+D006,Information Security,Technology,Atlanta,AFG-10040,CC-006
+D007,Cloud Platform Engineering,Technology,Atlanta,AFG-10052,CC-007
+D008,Software Engineering,Technology,Dallas,AFG-10064,CC-008
+D009,Digital Banking,Banking,Atlanta,AFG-10080,CC-009
+D010,Consumer Lending,Lending,Dallas,AFG-10093,CC-010
+D011,Payments Operations,Payments,Atlanta,AFG-10104,CC-011
+D012,Wealth Management,Wealth,Charlotte,AFG-10115,CC-012
+D013,Customer Experience,Operations,Dallas,AFG-10124,CC-013
+D014,Data & Analytics,Technology,Atlanta,AFG-10133,CC-014
+D015,Identity & Access Management,Technology,Atlanta,AFG-10143,CC-015

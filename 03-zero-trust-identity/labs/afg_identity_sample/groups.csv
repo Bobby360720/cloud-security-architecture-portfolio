@@ -1,0 +1,25 @@
+groupId,displayName,groupType,category,departmentId,privileged,description
+G-ALL,AFG-All-Employees,Security,birthright,,false,Standard employee access
+G-MANAGERS,AFG-All-Managers,Security,job-function,,false,Department management access
+G-SEC-READ,AFG-Security-Readers,Security,job-function,,false,Read-only security operations
+G-PLATFORM-READ,AFG-Platform-Readers,Security,job-function,,false,Read-only Azure platform access
+G-PAYMENTS-OPS,AFG-Payments-Operators,Security,job-function,,false,Payment operations access
+G-FINANCE-AP,AFG-Finance-AP,Security,job-function,,false,Accounts payable request processing
+G-FINANCE-APPROVE,AFG-Finance-Approvers,Security,sensitive,,false,Payment approval; mutually exclusive with Finance AP
+G-IAM-REVIEW,AFG-IAM-Access-Reviewers,Security,governance,,false,IGA access reviewers
+G-AZURE-PRIV-ELIGIBLE,AFG-Azure-Privileged-Eligible,Security,privileged,,true,Modeled eligible Azure role access; not an actual role assignment
+G-DEPT-D001,AFG-Dept-executive-office,Security,department,D001,false,Birthright access for Executive Office
+G-DEPT-D002,AFG-Dept-finance-accounting,Security,department,D002,false,Birthright access for Finance & Accounting
+G-DEPT-D003,AFG-Dept-people-culture,Security,department,D003,false,Birthright access for People & Culture
+G-DEPT-D004,AFG-Dept-legal-compliance,Security,department,D004,false,Birthright access for Legal & Compliance
+G-DEPT-D005,AFG-Dept-risk-management,Security,department,D005,false,Birthright access for Risk Management
+G-DEPT-D006,AFG-Dept-information-security,Security,department,D006,false,Birthright access for Information Security
+G-DEPT-D007,AFG-Dept-cloud-platform-engineering,Security,department,D007,false,Birthright access for Cloud Platform Engineering
+G-DEPT-D008,AFG-Dept-software-engineering,Security,department,D008,false,Birthright access for Software Engineering
+G-DEPT-D009,AFG-Dept-digital-banking,Security,department,D009,false,Birthright access for Digital Banking
+G-DEPT-D010,AFG-Dept-consumer-lending,Security,department,D010,false,Birthright access for Consumer Lending
+G-DEPT-D011,AFG-Dept-payments-operations,Security,department,D011,false,Birthright access for Payments Operations
+G-DEPT-D012,AFG-Dept-wealth-management,Security,department,D012,false,Birthright access for Wealth Management
+G-DEPT-D013,AFG-Dept-customer-experience,Security,department,D013,false,Birthright access for Customer Experience
+G-DEPT-D014,AFG-Dept-data-analytics,Security,department,D014,false,Birthright access for Data & Analytics
+G-DEPT-D015,AFG-Dept-identity-access-management,Security,department,D015,false,Birthright access for Identity & Access Management

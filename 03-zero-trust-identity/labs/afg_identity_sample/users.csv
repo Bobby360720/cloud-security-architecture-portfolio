@@ -1,0 +1,151 @@
+employeeId,userPrincipalName,givenName,surname,displayName,departmentId,department,businessUnit,jobTitle,managerEmployeeId,location,employeeType,employmentStatus,hireDate,costCenter
+AFG-10000,skyler.morgan.10000@afg.example.test,Skyler,Morgan,Skyler Morgan,D001,Executive Office,Corporate,"Director, Executive Office",,Atlanta,Employee,Active,2020-04-12,CC-001
+AFG-10001,dakota.jackson.10001@afg.example.test,Dakota,Jackson,Dakota Jackson,D001,Executive Office,Corporate,Executive Analyst,AFG-10000,Atlanta,Employee,Active,2022-07-03,CC-001
+AFG-10002,casey.perry.10002@afg.example.test,Casey,Perry,Casey Perry,D001,Executive Office,Corporate,Executive Analyst,AFG-10000,Atlanta,Employee,Active,2020-12-22,CC-001
+AFG-10003,emerson.nguyen.10003@afg.example.test,Emerson,Nguyen,Emerson Nguyen,D001,Executive Office,Corporate,Executive Analyst,AFG-10000,Atlanta,Employee,Active,2020-05-02,CC-001
+AFG-10004,blair.brooks.10004@afg.example.test,Blair,Brooks,Blair Brooks,D001,Executive Office,Corporate,Executive Analyst,AFG-10000,Atlanta,Employee,Active,2024-09-14,CC-001
+AFG-10005,robin.cooper.10005@afg.example.test,Robin,Cooper,Robin Cooper,D002,Finance & Accounting,Corporate,"Director, Finance & Accounting",,Atlanta,Employee,Active,2020-01-27,CC-002
+AFG-10006,micah.turner.10006@afg.example.test,Micah,Turner,Micah Turner,D002,Finance & Accounting,Corporate,Financial Analyst,AFG-10005,Atlanta,Employee,Active,2024-09-27,CC-002
+AFG-10007,jamie.jackson.10007@afg.example.test,Jamie,Jackson,Jamie Jackson,D002,Finance & Accounting,Corporate,Financial Analyst,AFG-10005,Atlanta,Employee,Active,2022-05-31,CC-002
+AFG-10008,micah.williams.10008@afg.example.test,Micah,Williams,Micah Williams,D002,Finance & Accounting,Corporate,Financial Analyst,AFG-10005,Atlanta,Employee,Active,2021-01-14,CC-002
+AFG-10009,cameron.shaw.10009@afg.example.test,Cameron,Shaw,Cameron Shaw,D002,Finance & Accounting,Corporate,Accountant,AFG-10005,Atlanta,Employee,Active,2020-06-26,CC-002
+AFG-10010,devon.thomas.10010@afg.example.test,Devon,Thomas,Devon Thomas,D002,Finance & Accounting,Corporate,Financial Analyst,AFG-10005,Atlanta,Employee,Active,2023-04-15,CC-002
+AFG-10011,adrian.rivera.10011@afg.example.test,Adrian,Rivera,Adrian Rivera,D002,Finance & Accounting,Corporate,Finance Specialist,AFG-10005,Atlanta,Employee,Leave,2022-02-26,CC-002
+AFG-10012,quinn.young.10012@afg.example.test,Quinn,Young,Quinn Young,D002,Finance & Accounting,Corporate,Accountant,AFG-10005,Atlanta,Employee,Active,2020-11-22,CC-002
+AFG-10013,parker.jackson.10013@afg.example.test,Parker,Jackson,Parker Jackson,D002,Finance & Accounting,Corporate,Accountant,AFG-10005,Atlanta,Employee,Active,2024-02-03,CC-002
+AFG-10014,kendall.jackson.10014@afg.example.test,Kendall,Jackson,Kendall Jackson,D002,Finance & Accounting,Corporate,Finance Specialist,AFG-10005,Atlanta,Employee,Active,2020-10-19,CC-002
+AFG-10015,dakota.bennett.10015@afg.example.test,Dakota,Bennett,Dakota Bennett,D003,People & Culture,Corporate,"Director, People & Culture",,Atlanta,Employee,Active,2021-10-31,CC-003
+AFG-10016,sage.thomas.10016@afg.example.test,Sage,Thomas,Sage Thomas,D003,People & Culture,Corporate,Talent Operations Specialist,AFG-10015,Atlanta,Employee,Active,2022-06-18,CC-003
+AFG-10017,kendall.williams.10017@afg.example.test,Kendall,Williams,Kendall Williams,D003,People & Culture,Corporate,HR Generalist,AFG-10015,Atlanta,Employee,Active,2022-07-27,CC-003
+AFG-10018,marley.carter.10018@afg.example.test,Marley,Carter,Marley Carter,D003,People & Culture,Corporate,Talent Operations Specialist,AFG-10015,Atlanta,Employee,Active,2024-07-01,CC-003
+AFG-10019,emerson.gray.10019@afg.example.test,Emerson,Gray,Emerson Gray,D003,People & Culture,Corporate,Talent Operations Specialist,AFG-10015,Atlanta,Employee,Active,2022-05-20,CC-003
+AFG-10020,devon.bell.10020@afg.example.test,Devon,Bell,Devon Bell,D003,People & Culture,Corporate,Talent Operations Specialist,AFG-10015,Atlanta,Employee,Active,2021-08-08,CC-003
+AFG-10021,rowan.price.10021@afg.example.test,Rowan,Price,Rowan Price,D003,People & Culture,Corporate,Talent Operations Specialist,AFG-10015,Atlanta,Employee,Active,2024-10-20,CC-003
+AFG-10022,quinn.patel.10022@afg.example.test,Quinn,Patel,Quinn Patel,D004,Legal & Compliance,Corporate,"Director, Legal & Compliance",,Atlanta,Employee,Active,2025-09-18,CC-004
+AFG-10023,harper.hayes.10023@afg.example.test,Harper,Hayes,Harper Hayes,D004,Legal & Compliance,Corporate,Compliance Analyst,AFG-10022,Atlanta,Employee,Active,2021-03-25,CC-004
+AFG-10024,casey.bell.10024@afg.example.test,Casey,Bell,Casey Bell,D004,Legal & Compliance,Corporate,Compliance Analyst,AFG-10022,Atlanta,Employee,Active,2024-09-25,CC-004
+AFG-10025,blair.hayes.10025@afg.example.test,Blair,Hayes,Blair Hayes,D004,Legal & Compliance,Corporate,Legal Operations Analyst,AFG-10022,Atlanta,Employee,Active,2024-04-12,CC-004
+AFG-10026,drew.price.10026@afg.example.test,Drew,Price,Drew Price,D004,Legal & Compliance,Corporate,Compliance Analyst,AFG-10022,Atlanta,Employee,Active,2021-04-14,CC-004
+AFG-10027,drew.young.10027@afg.example.test,Drew,Young,Drew Young,D004,Legal & Compliance,Corporate,Legal Operations Analyst,AFG-10022,Atlanta,Employee,Active,2021-04-01,CC-004
+AFG-10028,alex.perry.10028@afg.example.test,Alex,Perry,Alex Perry,D004,Legal & Compliance,Corporate,Legal Operations Analyst,AFG-10022,Atlanta,Employee,Active,2025-08-12,CC-004
+AFG-10029,taylor.cooper.10029@afg.example.test,Taylor,Cooper,Taylor Cooper,D004,Legal & Compliance,Corporate,Legal Operations Analyst,AFG-10022,Atlanta,Employee,Active,2025-09-10,CC-004
+AFG-10030,micah.reed.10030@afg.example.test,Micah,Reed,Micah Reed,D004,Legal & Compliance,Corporate,Compliance Analyst,AFG-10022,Atlanta,Employee,Active,2023-08-20,CC-004
+AFG-10031,cameron.gray.10031@afg.example.test,Cameron,Gray,Cameron Gray,D005,Risk Management,Risk,"Director, Risk Management",,Atlanta,Employee,Active,2023-06-13,CC-005
+AFG-10032,quinn.carter.10032@afg.example.test,Quinn,Carter,Quinn Carter,D005,Risk Management,Risk,Risk Analyst,AFG-10031,Atlanta,Employee,Active,2020-11-18,CC-005
+AFG-10033,jordan.perry.10033@afg.example.test,Jordan,Perry,Jordan Perry,D005,Risk Management,Risk,Enterprise Risk Specialist,AFG-10031,Atlanta,Employee,Active,2020-10-10,CC-005
+AFG-10034,micah.price.10034@afg.example.test,Micah,Price,Micah Price,D005,Risk Management,Risk,Risk Analyst,AFG-10031,Atlanta,Employee,Active,2021-06-09,CC-005
+AFG-10035,riley.jackson.10035@afg.example.test,Riley,Jackson,Riley Jackson,D005,Risk Management,Risk,Enterprise Risk Specialist,AFG-10031,Atlanta,Employee,Active,2022-05-17,CC-005
+AFG-10036,finley.chen.10036@afg.example.test,Finley,Chen,Finley Chen,D005,Risk Management,Risk,Enterprise Risk Specialist,AFG-10031,Atlanta,Employee,Active,2024-06-22,CC-005
+AFG-10037,sage.gray.10037@afg.example.test,Sage,Gray,Sage Gray,D005,Risk Management,Risk,Enterprise Risk Specialist,AFG-10031,Atlanta,Employee,Active,2021-05-10,CC-005
+AFG-10038,alex.collins.10038@afg.example.test,Alex,Collins,Alex Collins,D005,Risk Management,Risk,Risk Analyst,AFG-10031,Atlanta,Employee,Terminated,2022-06-21,CC-005
+AFG-10039,finley.bell.10039@afg.example.test,Finley,Bell,Finley Bell,D005,Risk Management,Risk,Risk Analyst,AFG-10031,Atlanta,Employee,Terminated,2022-07-26,CC-005
+AFG-10040,morgan.cooper.10040@afg.example.test,Morgan,Cooper,Morgan Cooper,D006,Information Security,Technology,"Director, Information Security",,Atlanta,Employee,Active,2023-09-15,CC-006
+AFG-10041,jordan.martin.10041@afg.example.test,Jordan,Martin,Jordan Martin,D006,Information Security,Technology,Security Analyst,AFG-10040,Atlanta,Employee,Active,2023-02-14,CC-006
+AFG-10042,kendall.harris.10042@afg.example.test,Kendall,Harris,Kendall Harris,D006,Information Security,Technology,Security Analyst,AFG-10040,Atlanta,Employee,Active,2021-06-25,CC-006
+AFG-10043,dakota.flores.10043@afg.example.test,Dakota,Flores,Dakota Flores,D006,Information Security,Technology,Cloud Security Engineer,AFG-10040,Atlanta,Employee,Active,2022-09-22,CC-006
+AFG-10044,avery.morgan.10044@afg.example.test,Avery,Morgan,Avery Morgan,D006,Information Security,Technology,Security Analyst,AFG-10040,Atlanta,Employee,Active,2024-10-31,CC-006
+AFG-10045,adrian.perry.10045@afg.example.test,Adrian,Perry,Adrian Perry,D006,Information Security,Technology,Security Analyst,AFG-10040,Atlanta,Employee,Terminated,2021-02-07,CC-006
+AFG-10046,dakota.williams.10046@afg.example.test,Dakota,Williams,Dakota Williams,D006,Information Security,Technology,Security Analyst,AFG-10040,Atlanta,Employee,Active,2022-10-15,CC-006
+AFG-10047,casey.nguyen.10047@afg.example.test,Casey,Nguyen,Casey Nguyen,D006,Information Security,Technology,Security Analyst,AFG-10040,Atlanta,Employee,Active,2023-02-14,CC-006
+AFG-10048,jordan.davis.10048@afg.example.test,Jordan,Davis,Jordan Davis,D006,Information Security,Technology,Security Analyst,AFG-10040,Atlanta,Employee,Active,2020-07-26,CC-006
+AFG-10049,alex.hayes.10049@afg.example.test,Alex,Hayes,Alex Hayes,D006,Information Security,Technology,Security Analyst,AFG-10040,Atlanta,Employee,Active,2021-11-12,CC-006
+AFG-10050,adrian.thomas.10050@afg.example.test,Adrian,Thomas,Adrian Thomas,D006,Information Security,Technology,Security Analyst,AFG-10040,Atlanta,Employee,Active,2021-11-05,CC-006
+AFG-10051,drew.flores.10051@afg.example.test,Drew,Flores,Drew Flores,D006,Information Security,Technology,Cloud Security Engineer,AFG-10040,Atlanta,Employee,Active,2023-03-14,CC-006
+AFG-10052,robin.price.10052@afg.example.test,Robin,Price,Robin Price,D007,Cloud Platform Engineering,Technology,"Director, Cloud Platform Engineering",,Atlanta,Employee,Active,2025-06-16,CC-007
+AFG-10053,casey.chen.10053@afg.example.test,Casey,Chen,Casey Chen,D007,Cloud Platform Engineering,Technology,Site Reliability Engineer,AFG-10052,Atlanta,Employee,Active,2022-06-10,CC-007
+AFG-10054,morgan.collins.10054@afg.example.test,Morgan,Collins,Morgan Collins,D007,Cloud Platform Engineering,Technology,Cloud Platform Engineer,AFG-10052,Atlanta,Employee,Active,2023-07-08,CC-007
+AFG-10055,morgan.carter.10055@afg.example.test,Morgan,Carter,Morgan Carter,D007,Cloud Platform Engineering,Technology,Site Reliability Engineer,AFG-10052,Atlanta,Employee,Active,2025-08-21,CC-007
+AFG-10056,morgan.martin.10056@afg.example.test,Morgan,Martin,Morgan Martin,D007,Cloud Platform Engineering,Technology,Cloud Platform Engineer,AFG-10052,Atlanta,Employee,Terminated,2022-01-31,CC-007
+AFG-10057,jordan.ross.10057@afg.example.test,Jordan,Ross,Jordan Ross,D007,Cloud Platform Engineering,Technology,Cloud Platform Engineer,AFG-10052,Atlanta,Employee,Active,2024-07-11,CC-007
+AFG-10058,quinn.collins.10058@afg.example.test,Quinn,Collins,Quinn Collins,D007,Cloud Platform Engineering,Technology,Cloud Platform Engineer,AFG-10052,Atlanta,Employee,Active,2020-12-01,CC-007
+AFG-10059,ellis.williams.10059@afg.example.test,Ellis,Williams,Ellis Williams,D007,Cloud Platform Engineering,Technology,Site Reliability Engineer,AFG-10052,Atlanta,Employee,Active,2022-04-16,CC-007
+AFG-10060,drew.thomas.10060@afg.example.test,Drew,Thomas,Drew Thomas,D007,Cloud Platform Engineering,Technology,Cloud Platform Engineer,AFG-10052,Atlanta,Employee,Active,2023-05-13,CC-007
+AFG-10061,devon.hayes.10061@afg.example.test,Devon,Hayes,Devon Hayes,D007,Cloud Platform Engineering,Technology,Cloud Platform Engineer,AFG-10052,Atlanta,Employee,Active,2025-02-20,CC-007
+AFG-10062,taylor.hayes.10062@afg.example.test,Taylor,Hayes,Taylor Hayes,D007,Cloud Platform Engineering,Technology,Cloud Platform Engineer,AFG-10052,Atlanta,Employee,Active,2025-09-03,CC-007
+AFG-10063,terry.hayes.10063@afg.example.test,Terry,Hayes,Terry Hayes,D007,Cloud Platform Engineering,Technology,Cloud Platform Engineer,AFG-10052,Atlanta,Employee,Active,2024-02-22,CC-007
+AFG-10064,rowan.howard.10064@afg.example.test,Rowan,Howard,Rowan Howard,D008,Software Engineering,Technology,"Director, Software Engineering",,Dallas,Employee,Active,2023-05-24,CC-008
+AFG-10065,blair.turner.10065@afg.example.test,Blair,Turner,Blair Turner,D008,Software Engineering,Technology,Software Engineer,AFG-10064,Dallas,Employee,Active,2023-05-11,CC-008
+AFG-10066,devon.ross.10066@afg.example.test,Devon,Ross,Devon Ross,D008,Software Engineering,Technology,Software Engineer,AFG-10064,Dallas,Employee,Active,2021-07-04,CC-008
+AFG-10067,drew.morgan.10067@afg.example.test,Drew,Morgan,Drew Morgan,D008,Software Engineering,Technology,Software Engineer,AFG-10064,Dallas,Employee,Active,2021-09-28,CC-008
+AFG-10068,finley.williams.10068@afg.example.test,Finley,Williams,Finley Williams,D008,Software Engineering,Technology,Software Engineer,AFG-10064,Dallas,Employee,Active,2022-12-17,CC-008
+AFG-10069,devon.cooper.10069@afg.example.test,Devon,Cooper,Devon Cooper,D008,Software Engineering,Technology,Software Engineer,AFG-10064,Dallas,Employee,Active,2021-01-13,CC-008
+AFG-10070,morgan.brooks.10070@afg.example.test,Morgan,Brooks,Morgan Brooks,D008,Software Engineering,Technology,Application Developer,AFG-10064,Dallas,Employee,Active,2021-06-19,CC-008
+AFG-10071,dakota.davis.10071@afg.example.test,Dakota,Davis,Dakota Davis,D008,Software Engineering,Technology,Application Developer,AFG-10064,Dallas,Employee,Active,2020-02-09,CC-008
+AFG-10072,finley.gray.10072@afg.example.test,Finley,Gray,Finley Gray,D008,Software Engineering,Technology,Software Engineer,AFG-10064,Dallas,Employee,Active,2020-05-27,CC-008
+AFG-10073,casey.nguyen.10073@afg.example.test,Casey,Nguyen,Casey Nguyen,D008,Software Engineering,Technology,Software Engineer,AFG-10064,Dallas,Employee,Active,2020-06-20,CC-008
+AFG-10074,robin.cooper.10074@afg.example.test,Robin,Cooper,Robin Cooper,D008,Software Engineering,Technology,Software Engineer,AFG-10064,Dallas,Employee,Active,2024-01-05,CC-008
+AFG-10075,taylor.rivera.10075@afg.example.test,Taylor,Rivera,Taylor Rivera,D008,Software Engineering,Technology,Application Developer,AFG-10064,Dallas,Employee,Active,2021-09-25,CC-008
+AFG-10076,riley.turner.10076@afg.example.test,Riley,Turner,Riley Turner,D008,Software Engineering,Technology,Software Engineer,AFG-10064,Dallas,Employee,Terminated,2024-08-15,CC-008
+AFG-10077,dakota.flores.10077@afg.example.test,Dakota,Flores,Dakota Flores,D008,Software Engineering,Technology,Application Developer,AFG-10064,Dallas,Employee,Active,2024-08-13,CC-008
+AFG-10078,robin.bennett.10078@afg.example.test,Robin,Bennett,Robin Bennett,D008,Software Engineering,Technology,Application Developer,AFG-10064,Dallas,Employee,Active,2021-10-14,CC-008
+AFG-10079,adrian.carter.10079@afg.example.test,Adrian,Carter,Adrian Carter,D008,Software Engineering,Technology,Application Developer,AFG-10064,Dallas,Employee,Active,2022-06-30,CC-008
+AFG-10080,cameron.kim.10080@afg.example.test,Cameron,Kim,Cameron Kim,D009,Digital Banking,Banking,"Director, Digital Banking",,Atlanta,Employee,Active,2022-07-21,CC-009
+AFG-10081,quinn.brooks.10081@afg.example.test,Quinn,Brooks,Quinn Brooks,D009,Digital Banking,Banking,Banking Operations Analyst,AFG-10080,Atlanta,Employee,Active,2024-06-20,CC-009
+AFG-10082,jamie.jackson.10082@afg.example.test,Jamie,Jackson,Jamie Jackson,D009,Digital Banking,Banking,Banking Operations Analyst,AFG-10080,Atlanta,Employee,Active,2023-02-17,CC-009
+AFG-10083,cameron.bell.10083@afg.example.test,Cameron,Bell,Cameron Bell,D009,Digital Banking,Banking,Digital Banking Specialist,AFG-10080,Atlanta,Employee,Active,2023-09-18,CC-009
+AFG-10084,drew.reed.10084@afg.example.test,Drew,Reed,Drew Reed,D009,Digital Banking,Banking,Digital Banking Specialist,AFG-10080,Atlanta,Employee,Active,2020-06-05,CC-009
+AFG-10085,dakota.turner.10085@afg.example.test,Dakota,Turner,Dakota Turner,D009,Digital Banking,Banking,Digital Banking Specialist,AFG-10080,Atlanta,Employee,Active,2024-11-22,CC-009
+AFG-10086,parker.gray.10086@afg.example.test,Parker,Gray,Parker Gray,D009,Digital Banking,Banking,Banking Operations Analyst,AFG-10080,Atlanta,Employee,Terminated,2022-11-09,CC-009
+AFG-10087,sydney.brooks.10087@afg.example.test,Sydney,Brooks,Sydney Brooks,D009,Digital Banking,Banking,Banking Operations Analyst,AFG-10080,Atlanta,Employee,Active,2024-01-31,CC-009
+AFG-10088,devon.williams.10088@afg.example.test,Devon,Williams,Devon Williams,D009,Digital Banking,Banking,Digital Banking Specialist,AFG-10080,Atlanta,Employee,Active,2021-05-25,CC-009
+AFG-10089,reese.ross.10089@afg.example.test,Reese,Ross,Reese Ross,D009,Digital Banking,Banking,Digital Banking Specialist,AFG-10080,Atlanta,Employee,Active,2023-08-29,CC-009
+AFG-10090,casey.chen.10090@afg.example.test,Casey,Chen,Casey Chen,D009,Digital Banking,Banking,Digital Banking Specialist,AFG-10080,Atlanta,Employee,Active,2024-04-01,CC-009
+AFG-10091,blair.collins.10091@afg.example.test,Blair,Collins,Blair Collins,D009,Digital Banking,Banking,Digital Banking Specialist,AFG-10080,Atlanta,Employee,Leave,2024-07-21,CC-009
+AFG-10092,reese.chen.10092@afg.example.test,Reese,Chen,Reese Chen,D009,Digital Banking,Banking,Digital Banking Specialist,AFG-10080,Atlanta,Employee,Active,2023-08-12,CC-009
+AFG-10093,avery.martin.10093@afg.example.test,Avery,Martin,Avery Martin,D010,Consumer Lending,Lending,"Director, Consumer Lending",,Dallas,Employee,Active,2025-04-22,CC-010
+AFG-10094,robin.gray.10094@afg.example.test,Robin,Gray,Robin Gray,D010,Consumer Lending,Lending,Lending Analyst,AFG-10093,Dallas,Employee,Active,2020-12-13,CC-010
+AFG-10095,reese.martin.10095@afg.example.test,Reese,Martin,Reese Martin,D010,Consumer Lending,Lending,Loan Operations Specialist,AFG-10093,Dallas,Employee,Active,2021-01-17,CC-010
+AFG-10096,marley.young.10096@afg.example.test,Marley,Young,Marley Young,D010,Consumer Lending,Lending,Lending Analyst,AFG-10093,Dallas,Employee,Active,2023-06-25,CC-010
+AFG-10097,alex.carter.10097@afg.example.test,Alex,Carter,Alex Carter,D010,Consumer Lending,Lending,Lending Analyst,AFG-10093,Dallas,Employee,Active,2025-04-30,CC-010
+AFG-10098,sage.nguyen.10098@afg.example.test,Sage,Nguyen,Sage Nguyen,D010,Consumer Lending,Lending,Lending Analyst,AFG-10093,Dallas,Employee,Active,2024-04-21,CC-010
+AFG-10099,skyler.howard.10099@afg.example.test,Skyler,Howard,Skyler Howard,D010,Consumer Lending,Lending,Lending Analyst,AFG-10093,Dallas,Employee,Active,2021-03-12,CC-010
+AFG-10100,robin.howard.10100@afg.example.test,Robin,Howard,Robin Howard,D010,Consumer Lending,Lending,Loan Operations Specialist,AFG-10093,Dallas,Employee,Active,2020-07-24,CC-010
+AFG-10101,taylor.davis.10101@afg.example.test,Taylor,Davis,Taylor Davis,D010,Consumer Lending,Lending,Lending Analyst,AFG-10093,Dallas,Employee,Active,2025-03-18,CC-010
+AFG-10102,blair.williams.10102@afg.example.test,Blair,Williams,Blair Williams,D010,Consumer Lending,Lending,Loan Operations Specialist,AFG-10093,Dallas,Employee,Active,2025-08-29,CC-010
+AFG-10103,sage.gray.10103@afg.example.test,Sage,Gray,Sage Gray,D010,Consumer Lending,Lending,Lending Analyst,AFG-10093,Dallas,Employee,Active,2025-04-28,CC-010
+AFG-10104,marley.bell.10104@afg.example.test,Marley,Bell,Marley Bell,D011,Payments Operations,Payments,"Director, Payments Operations",,Atlanta,Employee,Active,2023-02-09,CC-011
+AFG-10105,micah.young.10105@afg.example.test,Micah,Young,Micah Young,D011,Payments Operations,Payments,Transaction Operations Specialist,AFG-10104,Atlanta,Employee,Active,2022-09-06,CC-011
+AFG-10106,drew.davis.10106@afg.example.test,Drew,Davis,Drew Davis,D011,Payments Operations,Payments,Payments Analyst,AFG-10104,Atlanta,Employee,Active,2023-03-16,CC-011
+AFG-10107,quinn.jackson.10107@afg.example.test,Quinn,Jackson,Quinn Jackson,D011,Payments Operations,Payments,Transaction Operations Specialist,AFG-10104,Atlanta,Employee,Active,2023-08-02,CC-011
+AFG-10108,casey.bennett.10108@afg.example.test,Casey,Bennett,Casey Bennett,D011,Payments Operations,Payments,Transaction Operations Specialist,AFG-10104,Atlanta,Employee,Active,2021-09-17,CC-011
+AFG-10109,sydney.williams.10109@afg.example.test,Sydney,Williams,Sydney Williams,D011,Payments Operations,Payments,Transaction Operations Specialist,AFG-10104,Atlanta,Employee,Terminated,2024-08-30,CC-011
+AFG-10110,marley.nguyen.10110@afg.example.test,Marley,Nguyen,Marley Nguyen,D011,Payments Operations,Payments,Transaction Operations Specialist,AFG-10104,Atlanta,Employee,Active,2020-03-21,CC-011
+AFG-10111,parker.harris.10111@afg.example.test,Parker,Harris,Parker Harris,D011,Payments Operations,Payments,Payments Analyst,AFG-10104,Atlanta,Employee,Active,2023-12-11,CC-011
+AFG-10112,terry.ward.10112@afg.example.test,Terry,Ward,Terry Ward,D011,Payments Operations,Payments,Transaction Operations Specialist,AFG-10104,Atlanta,Employee,Active,2022-06-22,CC-011
+AFG-10113,harper.brooks.10113@afg.example.test,Harper,Brooks,Harper Brooks,D011,Payments Operations,Payments,Transaction Operations Specialist,AFG-10104,Atlanta,Employee,Active,2023-10-08,CC-011
+AFG-10114,dakota.reed.10114@afg.example.test,Dakota,Reed,Dakota Reed,D011,Payments Operations,Payments,Transaction Operations Specialist,AFG-10104,Atlanta,Employee,Active,2021-06-06,CC-011
+AFG-10115,devon.thomas.10115@afg.example.test,Devon,Thomas,Devon Thomas,D012,Wealth Management,Wealth,"Director, Wealth Management",,Charlotte,Employee,Active,2020-04-21,CC-012
+AFG-10116,jordan.bell.10116@afg.example.test,Jordan,Bell,Jordan Bell,D012,Wealth Management,Wealth,Client Services Associate,AFG-10115,Charlotte,Employee,Active,2021-07-09,CC-012
+AFG-10117,adrian.davis.10117@afg.example.test,Adrian,Davis,Adrian Davis,D012,Wealth Management,Wealth,Wealth Operations Analyst,AFG-10115,Charlotte,Employee,Active,2020-07-24,CC-012
+AFG-10118,drew.thomas.10118@afg.example.test,Drew,Thomas,Drew Thomas,D012,Wealth Management,Wealth,Client Services Associate,AFG-10115,Charlotte,Employee,Active,2022-05-16,CC-012
+AFG-10119,terry.thomas.10119@afg.example.test,Terry,Thomas,Terry Thomas,D012,Wealth Management,Wealth,Client Services Associate,AFG-10115,Charlotte,Employee,Active,2024-09-22,CC-012
+AFG-10120,alex.perry.10120@afg.example.test,Alex,Perry,Alex Perry,D012,Wealth Management,Wealth,Wealth Operations Analyst,AFG-10115,Charlotte,Employee,Active,2023-12-04,CC-012
+AFG-10121,skyler.carter.10121@afg.example.test,Skyler,Carter,Skyler Carter,D012,Wealth Management,Wealth,Wealth Operations Analyst,AFG-10115,Charlotte,Employee,Leave,2022-10-09,CC-012
+AFG-10122,casey.bennett.10122@afg.example.test,Casey,Bennett,Casey Bennett,D012,Wealth Management,Wealth,Wealth Operations Analyst,AFG-10115,Charlotte,Employee,Active,2025-04-23,CC-012
+AFG-10123,avery.davis.10123@afg.example.test,Avery,Davis,Avery Davis,D012,Wealth Management,Wealth,Client Services Associate,AFG-10115,Charlotte,Employee,Active,2024-02-19,CC-012
+AFG-10124,dakota.howard.10124@afg.example.test,Dakota,Howard,Dakota Howard,D013,Customer Experience,Operations,"Director, Customer Experience",,Dallas,Employee,Active,2021-04-14,CC-013
+AFG-10125,micah.ward.10125@afg.example.test,Micah,Ward,Micah Ward,D013,Customer Experience,Operations,Customer Experience Specialist,AFG-10124,Dallas,Employee,Active,2023-06-28,CC-013
+AFG-10126,taylor.collins.10126@afg.example.test,Taylor,Collins,Taylor Collins,D013,Customer Experience,Operations,Customer Experience Specialist,AFG-10124,Dallas,Employee,Active,2023-07-01,CC-013
+AFG-10127,emerson.ross.10127@afg.example.test,Emerson,Ross,Emerson Ross,D013,Customer Experience,Operations,Support Analyst,AFG-10124,Dallas,Employee,Active,2024-06-12,CC-013
+AFG-10128,emerson.howard.10128@afg.example.test,Emerson,Howard,Emerson Howard,D013,Customer Experience,Operations,Customer Experience Specialist,AFG-10124,Dallas,Employee,Active,2021-02-21,CC-013
+AFG-10129,kendall.shaw.10129@afg.example.test,Kendall,Shaw,Kendall Shaw,D013,Customer Experience,Operations,Customer Experience Specialist,AFG-10124,Dallas,Employee,Active,2020-06-17,CC-013
+AFG-10130,cameron.hayes.10130@afg.example.test,Cameron,Hayes,Cameron Hayes,D013,Customer Experience,Operations,Support Analyst,AFG-10124,Dallas,Employee,Active,2020-02-21,CC-013
+AFG-10131,taylor.nguyen.10131@afg.example.test,Taylor,Nguyen,Taylor Nguyen,D013,Customer Experience,Operations,Support Analyst,AFG-10124,Dallas,Employee,Active,2025-02-26,CC-013
+AFG-10132,dakota.martin.10132@afg.example.test,Dakota,Martin,Dakota Martin,D013,Customer Experience,Operations,Support Analyst,AFG-10124,Dallas,Employee,Active,2025-06-03,CC-013
+AFG-10133,emerson.jackson.10133@afg.example.test,Emerson,Jackson,Emerson Jackson,D014,Data & Analytics,Technology,"Director, Data & Analytics",,Atlanta,Employee,Active,2023-08-13,CC-014
+AFG-10134,adrian.bennett.10134@afg.example.test,Adrian,Bennett,Adrian Bennett,D014,Data & Analytics,Technology,Data Analyst,AFG-10133,Atlanta,Employee,Active,2023-02-16,CC-014
+AFG-10135,terry.davis.10135@afg.example.test,Terry,Davis,Terry Davis,D014,Data & Analytics,Technology,Data Analyst,AFG-10133,Atlanta,Employee,Active,2025-03-18,CC-014
+AFG-10136,emerson.shaw.10136@afg.example.test,Emerson,Shaw,Emerson Shaw,D014,Data & Analytics,Technology,Analytics Engineer,AFG-10133,Atlanta,Employee,Terminated,2023-10-09,CC-014
+AFG-10137,adrian.williams.10137@afg.example.test,Adrian,Williams,Adrian Williams,D014,Data & Analytics,Technology,Data Analyst,AFG-10133,Atlanta,Employee,Active,2025-06-20,CC-014
+AFG-10138,jamie.jackson.10138@afg.example.test,Jamie,Jackson,Jamie Jackson,D014,Data & Analytics,Technology,Analytics Engineer,AFG-10133,Atlanta,Employee,Active,2020-02-11,CC-014
+AFG-10139,quinn.perry.10139@afg.example.test,Quinn,Perry,Quinn Perry,D014,Data & Analytics,Technology,Analytics Engineer,AFG-10133,Atlanta,Employee,Active,2025-06-24,CC-014
+AFG-10140,harper.bell.10140@afg.example.test,Harper,Bell,Harper Bell,D014,Data & Analytics,Technology,Analytics Engineer,AFG-10133,Atlanta,Employee,Active,2025-01-09,CC-014
+AFG-10141,quinn.thomas.10141@afg.example.test,Quinn,Thomas,Quinn Thomas,D014,Data & Analytics,Technology,Data Analyst,AFG-10133,Atlanta,Employee,Active,2023-06-08,CC-014
+AFG-10142,rowan.martin.10142@afg.example.test,Rowan,Martin,Rowan Martin,D014,Data & Analytics,Technology,Analytics Engineer,AFG-10133,Atlanta,Employee,Active,2024-10-08,CC-014
+AFG-10143,cameron.howard.10143@afg.example.test,Cameron,Howard,Cameron Howard,D015,Identity & Access Management,Technology,"Director, Identity & Access Management",,Atlanta,Employee,Active,2025-02-01,CC-015
+AFG-10144,drew.kim.10144@afg.example.test,Drew,Kim,Drew Kim,D015,Identity & Access Management,Technology,Identity Engineer,AFG-10143,Atlanta,Employee,Active,2022-08-02,CC-015
+AFG-10145,taylor.perry.10145@afg.example.test,Taylor,Perry,Taylor Perry,D015,Identity & Access Management,Technology,IAM Analyst,AFG-10143,Atlanta,Employee,Active,2023-07-16,CC-015
+AFG-10146,taylor.perry.10146@afg.example.test,Taylor,Perry,Taylor Perry,D015,Identity & Access Management,Technology,IAM Analyst,AFG-10143,Atlanta,Employee,Active,2022-02-23,CC-015
+AFG-10147,dakota.collins.10147@afg.example.test,Dakota,Collins,Dakota Collins,D015,Identity & Access Management,Technology,Identity Engineer,AFG-10143,Atlanta,Employee,Active,2021-02-15,CC-015
+AFG-10148,cameron.reed.10148@afg.example.test,Cameron,Reed,Cameron Reed,D015,Identity & Access Management,Technology,Identity Engineer,AFG-10143,Atlanta,Employee,Active,2020-02-27,CC-015
+AFG-10149,morgan.carter.10149@afg.example.test,Morgan,Carter,Morgan Carter,D015,Identity & Access Management,Technology,Identity Engineer,AFG-10143,Atlanta,Employee,Active,2021-06-01,CC-015
