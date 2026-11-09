@@ -1,10 +1,6 @@
-# Aurelius Financial Group (AFG) — Company Profile
+# Auburn Financial Group (AFG) — Company Profile
 
-> **Fictional organization.** Aurelius Financial Group, its people, subsidiaries, systems, and
-> data are entirely fabricated for use as a consistent portfolio environment. Any resemblance
-> to a real company is coincidental. This document is the canonical reference for every
-> case study, architecture, and artifact built under the AFG name — later projects should
-> align with what's defined here rather than introducing conflicting details.
+> **Fictional organization.** Headquartered in Atlanta, Georgia, Auburn Financial Group takes its name from the city’s historic Sweet Auburn district and its legacy of Black enterprise. AFG began in 2011 as a digital-only consumer lending startup. Through organic growth and two acquisitions, it expanded into digital banking, consumer lending, payments processing, and wealth management.That growth left AFG with fragmented cloud environments, inconsistent governance, and inherited technical debt. AFG’s cloud-first strategy prioritizes cloud services for new workloads and modernization. Its two regional data centers continue to support legacy workloads during decommissioning.
 
 ---
 
@@ -12,10 +8,10 @@
 
 | Attribute | Detail |
 |---|---|
-| **Legal name** | Aurelius Financial Group, Inc. |
+| **Legal name** | Auburn Financial Group, Inc. |
 | **Short name** | AFG |
 | **Industry** | Financial Services / FinTech |
-| **Headquarters** | Charlotte, North Carolina, USA |
+| **Headquarters** | Atlanta, Georgia, USA |
 | **Founded** | 2011 |
 | **Ownership** | Privately held, investor-backed |
 | **Employees** | ~4,500 |
@@ -51,21 +47,13 @@ acquired subsidiaries — the ongoing problem this portfolio's case studies exis
 
 ## 3. Technology Landscape
 
-| Attribute | Environment |
+| Attribute | Environment
 |---|---|
-| **Cloud strategy** | Azure-first |
-| **Hybrid footprint** | Azure + on-premises data centers (2 regional DCs, being decommissioned) |
-| **Identity provider** | Microsoft Entra ID (hybrid-joined, Entra Connect sync from on-prem AD) |
-| **Endpoint security** | Microsoft Defender for Endpoint |
-| **SIEM / SOC** | Microsoft Sentinel |
-| **Cloud governance** | Azure Policy + Management Groups (Azure Landing Zone aligned) |
-| **Infrastructure as Code** | Bicep (primary), Terraform (legacy / multi-cloud pockets) |
-| **CI/CD** | Azure DevOps |
-| **Data platform** | Azure SQL Database, Azure Storage, Azure Synapse, Key Vault |
-| **Application hosting** | App Service, AKS, Azure Container Apps |
-| **Networking** | Hub-and-spoke, Azure Firewall, ExpressRoute to primary DC |
-| **Architecture pattern** | Enterprise-scale Landing Zones (Microsoft CAF) |
-| **Security model** | Zero Trust |
+| **Cloud strategy** | Cloud-first. Evaluate cloud services first for new workloads and modernization, with platform choices guided by business, security, and operational requirements. |
+| **Modeled cloud baseline** | Azure hosts the modeled cloud estate and serves as the portfolio’s primary platform for hands-on validation. |
+| **Hybrid footprint** | Azure and two regional on-premises data centers undergoing decommissioning. |
+| **Multicloud roadmap** | A limited AWS scenario is planned for future validation of security controls and evidence collection across cloud providers. |
+| **Cloud governance** | Enterprise control objectives apply across cloud environments. Azure Policy and Management Groups implement Azure guardrails. AWS implementation details will be defined when the scenario is scoped. |
 
 ---
 
@@ -93,12 +81,12 @@ access reviews, etc.).
 Every project in this portfolio must be consistent with these eight principles:
 
 1. **Zero Trust by default** — never trust, always verify; no implicit trust based on network location.
-2. **Identity is the primary security perimeter** — Entra ID, Conditional Access, and PIM anchor every access decision.
-3. **Private connectivity preferred** — private endpoints and hub-and-spoke networking over public exposure.
+2. **Identity is the primary security perimeter** —Apply consistent access requirements across environments. Microsoft Entra ID, Conditional Access, and PIM anchor access governance where integrated. Cloud-native identities and workload permissions follow the same least-privilege objectives.
+3. **Private connectivity preferred** — Prefer private service access and segmented network paths. Use platform-native connectivity patterns where they meet workload and risk requirements.
 4. **Infrastructure must be defined as code** — no manual "ClickOps" changes to production.
-5. **Policy as Code governs cloud resources** — guardrails enforced via Azure Policy at management group scope, not tribal knowledge.
-6. **Centralized security telemetry is mandatory** — all logs flow to Sentinel; no orphaned data sources.
-7. **Least privilege and just-in-time privileged access** — PIM-gated, time-boxed, and audited.
+5. **Policy as Code governs cloud resources** — Define enterprise guardrails as version-controlled code. Use Azure Policy at the appropriate management-group or subscription scope for Azure and evaluate equivalent enforcement for future cloud scenarios..
+6. **Centralized security telemetry is mandatory** — Route required security telemetry to the central SOC monitoring platform. Microsoft Sentinel is the current SIEM. Define required sources, retention, and validation evidence for each workload..
+7. **Least privilege and just-in-time privileged access** — Minimize standing privileges and make elevated access time-bound and auditable. Use Entra PIM where supported and evaluate platform-native controls for other environments..
 8. **Security controls must be measurable** — every control maps to a metric, dashboard, or compliance score.
 
 ---

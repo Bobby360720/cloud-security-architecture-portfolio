@@ -1,3 +1,4 @@
+![alt text](<Copper A Auburn financial logo.png>)
 # AFG Enterprise Security Architecture Transformation
 
 **From brownfield assessment to defensible cloud, identity, and secure platform engineering architecture.**
