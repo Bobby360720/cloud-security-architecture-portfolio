@@ -1,17 +1,21 @@
 ![alt text](<Copper A Auburn financial logo.png>)
 # AFG Enterprise Security Architecture Transformation
 
-**From brownfield assessment to defensible cloud, identity, and secure platform engineering architecture.**
+**Azure-first cloud security architecture, implemented through DevSecOps and validated with focused AWS security scenarios.**
 
 An evolving, hands-on enterprise architecture portfolio using **AFG Enterprises**, a fictionalized Azure-first financial-technology enterprise, to connect business requirements, security risks, architecture decisions, technical controls, engineering implementation, and validation evidence.
 
-**Primary pillars:** Cloud Security Architecture · Identity & Zero Trust Architecture · Secure Platform Engineering
+**Primary focus:** Cloud Security Architecture
 
-**Technology focus:** Microsoft Azure · Microsoft Entra ID · Terraform · Azure Policy · GitHub Actions · DevSecOps
+**Supporting capabilities:** Identity & Zero Trust · Secure Platform Engineering & DevSecOps
 
-> **Current status (November 2026):** Phase 00 established the enterprise assessment baseline. Phase 01 implemented and validated a Terraform-managed Azure Landing Zone. **Phase 02 — Cloud Governance is in progress.** Later phases and proposed platform capabilities remain planned unless a linked evidence artifact demonstrates otherwise.
+**Technology focus:** Microsoft Azure · Microsoft Entra ID · Terraform · Azure Policy · GitHub Actions · OPA/Rego · Checkov
+
+**Planned AWS validation:** IAM · S3 · VPC security groups · CloudTrail · CloudWatch
+
+> **Current status (November 2026):** Phase 00 established the enterprise assessment baseline. Phase 01 implemented and validated a Terraform-managed Azure Landing Zone. Phase 02 is closed for its agreed governance scope, with representative GR-02 validation recorded. Additional policy-as-code exercises are follow-on practice. Phase 03 design and synthetic identity preparation have begun. Later deployments, CI/CD enforcement, and AWS validation remain planned until linked evidence demonstrates their results.
 >
-> **Portfolio direction:** Secure Platform Engineering replaces Information Protection as the third primary pillar. Information protection remains an essential cross-cutting control domain; existing findings, risks, requirements, and compliance obligations are not retired by this change.
+> **Portfolio direction:** Develop Cloud Security Architect capability through risk-based design and hands-on DevSecOps delivery. Azure is the primary implementation platform. Entra ID supports identity security, and a small AWS scenario will demonstrate transferable control design. SailPoint training and integration are deferred to the backlog. Information protection remains a cross-cutting control domain.
 
 ---
 
@@ -34,7 +38,7 @@ The transformation addresses interconnected challenges:
 
 > How can AFG modernize a brownfield enterprise and provide secure, reusable cloud platform capabilities while governing identity, reducing material risk, and minimizing business disruption?
 
-## 2. Architecture Strategy: Three Primary Pillars
+## 2. Architecture Strategy
 
 | Pillar | Architecture question | Portfolio evidence |
 |---|---|---|
@@ -42,7 +46,7 @@ The transformation addresses interconnected challenges:
 | **Identity & Zero Trust Architecture** | How should workforce, privileged, application, and workload identities authenticate, obtain access, and be governed across trust boundaries? | Microsoft Entra ID reference patterns, role and privileged-access designs, federation, Conditional Access, workload identity, lifecycle requirements, and threat models |
 | **Secure Platform Engineering** | How can AFG make secure deployment the repeatable default through shared services, automated controls, and clear operating ownership? | Reusable Terraform patterns, GitHub Actions/CI-CD security checks, policy-as-code, secure application and API reference deployments, workload guardrails, operations, and deployment evidence |
 
-### How the pillars work together
+### How the capabilities work together
 
 Cloud Security Architecture defines enterprise boundaries, requirements, and guardrails. Identity & Zero Trust defines access and trust relationships. Secure Platform Engineering makes approved patterns repeatable and testable through automation, reusable infrastructure, secure deployment workflows, and operational standards.
 
@@ -54,7 +58,7 @@ Cloud Security Architecture defines enterprise boundaries, requirements, and gua
 - **Application/API and AI security:** Threat modeling, Azure API Management where justified, secure application design, AI access controls, and model/data governance.
 - **Enterprise risk and compliance:** Control ownership, exceptions, residual-risk acceptance, testing, and measurable outcomes.
 
-DevSecOps and policy-as-code are **core Secure Platform Engineering practices**, rather than peripheral technology demonstrations.
+DevSecOps and policy-as-code connect architecture requirements to repeatable delivery controls and measurable validation.
 
 ### Architecture decision standards
 
@@ -97,20 +101,22 @@ The current-state model remains separate from the target design; later implement
 | Bootstrap | Engineering foundation | Complete | Terraform, repository, authentication, and deployment foundations |
 | 00 | Enterprise assessment | Baseline complete | Business context, findings, risks, requirements, current state |
 | 01 | Azure Landing Zone | Implemented and validated | Cloud platform foundation and governance boundaries |
-| 02 | Cloud governance | **In progress** | Azure Policy, ownership, exemptions, compliance evidence, and policy-as-code architecture |
-| 03 | Zero Trust identity | Planned | **Identity & Zero Trust flagship** |
+| 02 | Cloud governance | Closed for agreed scope; follow-on practice planned | Azure Policy, ownership, exemptions, compliance evidence, and policy-as-code architecture |
+| 03 | Zero Trust identity | Design and seed-data preparation started; deployments planned | Entra ID identity security supporting the cloud architecture |
 | 04 | Network modernization | Planned | Cloud security and platform networking controls |
-| 05 | Security operations | Planned | Detection, telemetry, response, and operational observability |
-| 06 | DevSecOps / secure delivery | Planned | **Secure Platform Engineering flagship implementation track** |
+| 05 | Security operations | Planned | Detection, telemetry, response, and future Defender for Cloud DevOps/AWS integration evaluation |
+| 06 | DevSecOps / secure delivery | Planned | Secure delivery flagship and focused AWS Terraform validation |
 | 07 | Data protection | Planned; reduced emphasis | Required information protection and privacy baselines; no standalone flagship |
 | 08 | AI security | Planned | Cross-cutting workload identity, data access, and AI safeguards |
 | 09 | DLV FinTech platform | Planned | Integrated secure workload reference/capstone |
 
 **Roadmap interpretation:** Existing folder and phase identifiers remain unchanged. Secure Platform Engineering spans Phase 01/02 foundations and Phase 06/09 engineering deliverables; it is **not** a newly claimed completed phase. The Phase 07 scope adjustment does not close or negate any previously identified data risks.
 
-### Current focus: Phase 02 — Cloud Governance
+### Current focus — Architecture through policy as code
 
-Use the validated management-group and subscription hierarchy to design and evaluate policy scope, initiative structure, inheritance, exemptions, remediation, tagging, control ownership, compliance evidence, and progressive enforcement. Finish the current governance work before broadening deployment scope.
+Keep Phase 02 closed for its agreed scope. Extend the existing governance baseline through incremental Terraform practice for the six planned guardrails, with traceability to their existing requirements and control designs. Connect representative controls to secure delivery in Phase 06. Continue Phase 03 design around Entra ID when identity work resumes.
+
+The next integrated delivery objective is to evaluate a Terraform plan in CI, reject an insecure configuration, deploy an approved configuration using a least-privilege federated identity, and retain the resulting control evidence. Existing local OPA tests and Azure Policy results provide the starting evidence. Pipeline enforcement remains a planned validation step.
 
 For detailed tasks and checkpoint status, consult [GitHub Issues](https://github.com/Bobby360720/cloud-security-architecture-portfolio/issues), [Milestones](https://github.com/Bobby360720/cloud-security-architecture-portfolio/milestones), and phase-specific evidence—not a duplicated task list here.
 
@@ -175,11 +181,32 @@ A small representative AFG application workload will exercise the existing landi
 
 These are **planned acceptance criteria**, not claims of completed enterprise implementation. Existing independent lab experiments may inform design, but are not automatically counted as integrated AFG validation.
 
-**Scope guardrail:** Prioritize low-cost Azure PaaS and a minimal representative deployment. Avoid introducing AKS, multi-cloud, a service mesh, or a developer portal without a business requirement. Keep the core governance hierarchy persistent; deploy short-lived workloads with teardown and estimated cost checks.
+**Scope guardrail:** Prioritize low-cost Azure PaaS and a minimal representative deployment. Keep the core governance hierarchy persistent. Add AWS through the bounded scenario below, with estimated monthly and per-run costs assessed before deployment and short-lived resources torn down after testing.
 
-## 7. Identity & Zero Trust: Planned Flagship
+### Focused AWS security validation — Planned
 
-Phase 03 will address workforce and application federation, Conditional Access, privileged access/PIM, role design, joiner-mover-leaver processes, access reviews, managed and federated workload identity, identity threat modeling, and identity governance ownership. Microsoft Entra ID remains the primary execution platform; Okta or SailPoint evaluations require a decision case and are not assumed implemented.
+**Architecture objective:** Test how AFG would apply selected security requirements to an acquired AWS workload while retaining Azure as its primary cloud. The acquisition context is a modeled scenario.
+
+Use the existing AWS environment only after confirming account ownership, permissions, baseline configuration, and resource costs. Build one small Terraform reference deployment. Place this work within Phase 06 and link its evidence from the existing phase structure.
+
+| Capability | Planned implementation | Evidence required |
+|---|---|---|
+| Deployment identity | GitHub Actions OIDC federation to a narrowly scoped AWS IAM role, with repository and environment trust conditions | Trust-policy review, allowed deployment, and rejected unauthorized identity test |
+| Data security | S3 Block Public Access, encryption, TLS-only access, and least-privilege bucket access | Terraform plan, observed settings, authorized access, and denied unauthorized access |
+| Network boundaries | A minimal VPC and security group configuration evaluated against ingress requirements | Plan checks rejecting unrestricted administrative ingress and observed deployed rules |
+| Audit and monitoring | Assess existing CloudTrail coverage, configure required logging without duplicate trails, and use CloudWatch where justified | A captured deployment/API event and a demonstrated query or detection |
+| Secure delivery | Terraform validation, Checkov scanning, and targeted OPA/Rego plan checks in CI | Passing compliant plan and blocked noncompliant plan, with retained workflow results |
+| Lifecycle and cost | Scoped resource tags, cost estimate, controlled teardown, and cleanup checks | Estimated monthly/per-run costs, destroy output, and verification of remaining billable resources |
+
+Compare Azure and AWS control intent, identity trust, enforcement boundaries, and operating ownership in the existing architecture decision and evidence records. Record platform-specific trade-offs and residual risks.
+
+Future Defender for Cloud integration with GitHub and/or Azure DevOps, followed by evaluation of AWS onboarding, remains a phased extension. Licensing, permissions, cost, and required coverage will determine the implementation scope.
+
+## 7. Identity & Zero Trust — Entra ID Focus
+
+Phase 03 will address Conditional Access, privileged access/PIM, role design, joiner-mover-leaver processes, access reviews, managed and federated workload identity, identity threat modeling, and governance ownership. Microsoft Entra ID is the primary implementation platform. Feature selection will consider available licensing and lab cost.
+
+The committed synthetic identity dataset supports later lifecycle and access scenarios. Dataset preparation is separate from tenant provisioning and control validation. SailPoint training, connector work, and integration labs are deferred to the backlog. Existing Phase 03 SailPoint evaluation material is historical planning pending alignment with this direction.
 
 ## 8. Information Protection: Supporting Baseline
 
@@ -195,7 +222,7 @@ Existing Phase 00 findings, risks, and regulatory decisions retain their referen
 
 ## 9. Integrated FinTech Platform: Planned Capstone
 
-Phase 09 is intended to demonstrate one representative business workload combining the three primary pillars: landing-zone placement and policy, human and workload identity, secure IaC delivery, application/API boundaries, logging, security operations, information protection baseline requirements, and evidence-driven acceptance. The platform remains a **planned capstone**, not a completed production environment.
+Phase 09 is intended to demonstrate one representative business workload combining cloud architecture, identity security, and secure delivery: landing-zone placement and policy, human and workload identity, secure IaC delivery, application/API boundaries, logging, security operations, information protection baseline requirements, and evidence-driven acceptance. The platform remains a **planned capstone**, not a completed production environment.
 
 ## 10. Transformation Method and Evidence
 
@@ -240,6 +267,7 @@ Baseline tagging targets include `Environment`, `Application`, `Owner`, `CostCen
 | Network and workload protection | Azure Firewall, routing, private endpoints, DNS, segmentation, Key Vault |
 | Security operations | Microsoft Sentinel, Defender for Cloud, Azure Monitor, diagnostic logging |
 | Information protection | Classification, encryption, Microsoft Purview/DLP where requirements justify it |
+| Focused AWS validation (planned) | IAM/OIDC federation, S3, VPC security groups, CloudTrail, CloudWatch, Terraform, shared CI policy checks |
 | Emerging workloads | AI security architecture, identity-aware retrieval and data access controls |
 
 Technology inclusion is **not** proof of deployment, purchasing, proficiency, or enterprise approval.
@@ -274,8 +302,8 @@ Technology inclusion is **not** proof of deployment, purchasing, proficiency, or
 
 **John Hilton Jr.** · [LinkedIn](https://www.linkedin.com/in/johnhilton1/)
 
-Cloud Security Engineer advancing enterprise architecture capability across **Cloud Security, Identity & Zero Trust, and Secure Platform Engineering**. This portfolio emphasizes moving from isolated control implementation toward enterprise assessment, risk-based architecture decisions, secure platform standards, repeatable engineering, operational ownership, and measurable validation.
+Cloud Security Engineer developing **Cloud Security Architect capability with hands-on DevSecOps skills**. Azure is the primary platform, supported by Entra ID security and planned AWS validation. This portfolio emphasizes moving from isolated control implementation toward enterprise assessment, risk-based architecture decisions, secure platform standards, repeatable engineering, operational ownership, and measurable validation.
 
 ## Portfolio Objective
 
-The objective is not to deploy the most tools or simulate an enterprise-sized environment in a personal lab. It is to demonstrate the ability to **assess business risk, translate requirements into defensible architecture, establish guardrails, engineer reusable secure paths, validate representative controls, and explain the resulting trade-offs and outcomes clearly.**
+The objective is to demonstrate the ability to **assess business risk, translate requirements into defensible cloud architecture, establish guardrails, engineer secure delivery workflows, validate representative Azure and AWS controls, and explain the resulting trade-offs and outcomes clearly.**
