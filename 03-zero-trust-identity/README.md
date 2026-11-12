@@ -132,7 +132,7 @@ AFG requires an identity architecture that supports multiple technology environm
 
 ### 8. Identity Threat Detection and Monitoring
 
-- Identity threat modeling.
+- [Workload identity threat model](workload-identity-threat-model.md) — modeled GitHub Actions-to-Azure federation, prioritized threats, proposed mitigations, and planned validation for [Issue #42](https://github.com/Bobby360720/cloud-security-architecture-portfolio/issues/42).
 - Authentication and authorization telemetry.
 - Microsoft Entra sign-in and audit logs.
 - Microsoft Sentinel integration.
