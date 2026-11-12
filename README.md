@@ -181,6 +181,8 @@ These are **planned acceptance criteria**, not claims of completed enterprise im
 
 Phase 03 will address workforce and application federation, Conditional Access, privileged access/PIM, role design, joiner-mover-leaver processes, access reviews, managed and federated workload identity, identity threat modeling, and identity governance ownership. Microsoft Entra ID remains the primary execution platform; Okta or SailPoint evaluations require a decision case and are not assumed implemented.
 
+The [workload identity threat model](03-zero-trust-identity/workload-identity-threat-model.md) traces the proposed GitHub Actions-to-Azure federation design to enterprise risk R-003, identifies trust boundaries, and defines the checks required before considering production use. Lab validation is pending.
+
 ## 8. Information Protection: Supporting Baseline
 
 Phase 07 remains a repository domain because the modeled enterprise has information protection obligations. Its reduced scope emphasizes:
