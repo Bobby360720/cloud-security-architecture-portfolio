@@ -1,4 +1,4 @@
-![alt text](<Copper A Auburn financial logo.png>)
+![Auburn Financial Group logo](copper-a-auburn-financial-logo.png)
 # AFG Enterprise Security Architecture Transformation
 
 **Azure-first cloud security architecture, implemented through DevSecOps and validated with focused AWS security scenarios.**
